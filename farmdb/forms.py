@@ -2,8 +2,18 @@ from .models import *
 from django import forms
 from django.contrib.auth.models import User
 
-class FarmerForm(forms.ModelForm):
+
+
+class Create_Farmer_Form(forms.ModelForm):
+
+    password = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
-        model = Farmer
-        fields = [Far]
+        model = User
+        fields = ['username','password','email']
+
+class Animal_Group_Form(forms.ModelForm):
+
+    class Meta:
+        model = Breed
+        fields = ['farm', 'animal_group','active']

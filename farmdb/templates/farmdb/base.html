@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base_App</title>
+    <link rel="stylesheet" href="{% static 'farmdb/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="{% static 'farmdb/assets/css/Navigation-Clean1.css' %}">
+
+    <link rel="stylesheet" href="{% static 'farmdb/assets/css/styles.css' %}">
+</head>
+
+<body style="/*font-family:Comic Sans MS, Comic Sans, cursive;*/">
+<div>
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"
+                                          style="font-family:'Kaushan Script',cursive;color:white;">FarmData2.0 </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" role="presentation"><a href="#">Animal DB</a></li>
+                    <li role="presentation"><a href="#">Crop DB</a></li>
+                    <li role="presentation"><a href="#">Blog </a></li>
+                    <li role="presentation"><a href="#">FAQ </a></li>
+                    <li role="presentation"><a href="#">Contact Us</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+                                            href="#">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">First Item</a></li>
+                            <li role="presentation"><a href="#">Second Item</a></li>
+                            <li role="presentation"><a href="#">Third Item</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a href="#"><i class="glyphicon glyphicon-log-out"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+here is some text
+
+{% block body %}
+
+{% endblock %}
+
+
+<script src="{% static 'farmdb/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'farmdb/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
