@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^farmdb/', include('farmdb.urls')),
-    url(r'^$', include('farmdb.urls')),#Later change this to the index page
+    url(r'^', include('farmdb.urls')),#Later change this to the index page
 ]
 
 
