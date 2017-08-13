@@ -3,13 +3,13 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 from django.utils import timezone
 
-
 # The model imports.
 from .farm import Farm
 
-#The definitions
 
-class Animal_Group(models.Model):
+# The definitions
+
+class AnimalGroup(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     animal_group = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
@@ -18,45 +18,68 @@ class Animal_Group(models.Model):
         return self.animal_group
 
 
-class Animal_GroupAdmin(admin.ModelAdmin):
+class AnimalGroupAdmin(admin.ModelAdmin):
     list_display = ('farm', 'animal_group', 'active')
     search_fields = ('farm', 'animal_group')
-    list_filter = 'active'
+    list_filter = ('active',)
     date_hierarchy = 'reg_date'
-    ordering = ('farm','animal_group')
+    ordering = ('farm', 'animal_group')
 
 
 class Breed(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     breed = models.CharField(max_length=50)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ("animal_group", "breed")
+        unique_together = ('animal_group', 'breed')
+
+    def __str__(self):
+        return self.breed
 
 
 class BreedAdmin(admin.ModelAdmin):
-    list_display = ('farm','breed','active','animal_group')
-    search_fields = ('farm','breed')
-    list_filter = 'active'
-    ordering = ('farm','breed')
+    list_display = ('farm', 'breed', 'active', 'animal_group')
+    search_fields = ('farm', 'breed')
+    list_filter = ('active',)
+    ordering = ('farm', 'breed')
 
 
-class Sub_Group(models.Model):
+class SubGroup(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    sub_group = models.CharField(max_length=50)
+    subGroup = models.CharField(max_length=50)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
 
     class Meta:
-        unique_together = ("animal_group", "sub_group")
+        unique_together = ('Farm', 'animal_group', 'sub_group')
+
+    def __str__(self):
+        return self.subGroup
+
+
+class SubGroupAdmin(admin.ModelAdmin):
+    list_display = ('farm', 'subGroup', 'active', 'animalGroup')
+    search_fields = ('farm', 'subGroup')
+    list_filter = ('active',)
+    ordering = ('farm', 'subGroup')
 
 
 class Origin(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     origin = models.CharField(max_length=200)
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.origin
+
+
+class OriginAdmin(admin.ModelAdmin):
+    list_display = ('farm', 'origin', 'active')
+    search_fields = ('farm', 'origin')
+    list_filter = ('active',)
+    ordering = ('farm', 'origin')
 
 
 class Animal(models.Model):
@@ -71,16 +94,29 @@ class Animal(models.Model):
     filename = models.FileField()
     alive = models.BooleanField(default=True)
     comments = models.TextField()
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
+    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(Sub_Group, on_delete=models.CASCADE)
+    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     origin = models.ForeignKey(Origin, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class AnimalAdmin(admin.ModelAdmin):
+    list_display = Animal._meta.get_fields()
+    search_fields = ('farm', 'name')
+    list_filter = ('active',)
+    ordering = ('farm', 'name')
 
 
 class Reason(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     reason = models.CharField(max_length=50)
     active = models.BooleanField()
+
+    def __str__(self):
+        return self.reason
 
 
 class Vet(models.Model):
@@ -97,14 +133,18 @@ class Vet(models.Model):
     assistants = models.CharField(max_length=100, blank=True)
     comments = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.reason
 
-# Did not add the user stated in the original model. If problems arise, add it
 
 class Medication(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     medication = models.CharField(max_length=100)
     dosage = models.CharField(max_length=100, blank=True)
     active = models.BooleanField()
+
+    def __str__(self):
+        return self.medication
 
 
 class Meds_given(models.Model):
@@ -114,6 +154,8 @@ class Meds_given(models.Model):
     units_given = models.FloatField
     vet_id = models.ForeignKey(Vet, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.medication
 
 class Egg_Log(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -121,11 +163,16 @@ class Egg_Log(models.Model):
     number = models.IntegerField()
     comments = models.TextField(max_length=300)
 
+    def __str__(self):
+        return self.collection_date
 
 class Wormer(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     wormer = models.CharField(max_length=100)
     active = models.BooleanField()
+
+    def __str__(self):
+        return self.wormer
 
 
 class Sheep_care(models.Model):
@@ -145,6 +192,8 @@ class Sheep_care(models.Model):
     estimated = models.CharField(max_length=9)
     comments = models.TextField()
 
+    def __str__(self):
+        return self.animal
 
 class Forage(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -175,6 +224,9 @@ class Destination(models.Model):
     destination = models.CharField(max_length=200)
     active = models.BooleanField()
 
+    def __str__(self):
+        return self.destination
+
 
 class Sale(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -186,6 +238,11 @@ class Sale(models.Model):
     price_lb = models.DecimalField(max_digits=8, decimal_places=2)
     fees = models.DecimalField(max_digits=6, decimal_places=2)
     comments = models.TextField()
+    sale_date=models.DateField(auto_created=timezone.now)
+
+    def __str__(self):
+        return self.animal
+
 
 
 class Slay_House(models.Model):
@@ -193,6 +250,8 @@ class Slay_House(models.Model):
     slay_house = models.CharField(max_length=200)
     active = models.BooleanField()
 
+    def __str__(self):
+        return self.slay_house
 
 class Slaughter(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -207,11 +266,16 @@ class Slaughter(models.Model):
     fees = models.DecimalField(max_digits=5, decimal_places=2)
     comments = models.TextField()
 
+    def __str__(self):
+        return self.animal
 
 class Other_Dest(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     reason = models.CharField(max_length=50)
     active = models.BooleanField()
+
+    def __str__(self):
+        return self.reason
 
 
 class Other_Reason(models.Model):
@@ -219,6 +283,8 @@ class Other_Reason(models.Model):
     reason = models.CharField(max_length=50)
     active = models.BooleanField()
 
+    def __str__(self):
+        self.reason
 
 class Other_Remove(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -229,6 +295,8 @@ class Other_Remove(models.Model):
     weight = models.PositiveSmallIntegerField()
     comments = models.TextField()
 
+    def __str__(self):
+        return self.reason
 
 class Feed_Type(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -260,7 +328,7 @@ class Feed_Purchase(models.Model):
     purchase_date = models.DateField()
     type = models.ForeignKey(Feed_Type, on_delete=models.CASCADE)
     subtype = models.ForeignKey(Feed_Subtype, on_delete=models.CASCADE)
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
+    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     units = models.ForeignKey(Feed_Unit, on_delete=models.CASCADE)
     price_unit = models.DecimalField(max_digits=8, decimal_places=2)
@@ -277,8 +345,8 @@ class Task_Master(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     comments = models.TextField()
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(Sub_Group, on_delete=models.CASCADE)
+    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
     complete = models.BooleanField(default=False)
@@ -289,8 +357,8 @@ class Task_Recurring(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     start_date = models.DateField()
     comments = models.TextField()
-    animal_group = models.ForeignKey(Animal_Group, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(Sub_Group, on_delete=models.CASCADE)
+    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
     recur = models.CharField(max_length=15)

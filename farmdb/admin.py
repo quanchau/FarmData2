@@ -1,11 +1,11 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Farm)
-admin.site.register(Farmer)
-admin.site.register(Animal_Group)
-admin.site.register(Breed)
-admin.site.register(Sub_Group)
+admin.site.register(Farm,FarmAdmin)
+admin.site.register(Farmer,FarmerAdmin)
+admin.site.register(Animal_Group,Animal_GroupAdmin)
+admin.site.register(Breed,BreedAdmin)
+admin.site.register(Sub_Group,Sub_GroupAdmin)
 admin.site.register(Origin)
 admin.site.register(Animal)
 admin.site.register(Reason)
