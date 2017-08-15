@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e299ce93-bbb3-4b4d-8f45-a4fa880f7db1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farmdb/models/farmData.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farmdb/models/task.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FarmData2.iml" afterPath="$PROJECT_DIR$/.idea/FarmData2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdata2/settings.py" afterPath="$PROJECT_DIR$/farmdata2/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/admin.py" afterPath="$PROJECT_DIR$/farmdb/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/forms.py" afterPath="$PROJECT_DIR$/farmdb/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/models/__init__.py" afterPath="$PROJECT_DIR$/farmdb/models/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/models/animalData.py" afterPath="$PROJECT_DIR$/farmdb/models/animalData.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/models/farm.py" afterPath="$PROJECT_DIR$/farmdb/models/farm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/models/farmData.py" afterPath="$PROJECT_DIR$/farmdb/models/farmData.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,8 +53,8 @@
       <file leaf-file-name="farmData.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/farmdb/models/farmData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="102" column="49" lean-forward="false" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+            <state relative-caret-position="-1331">
+              <caret line="237" column="52" lean-forward="true" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -135,13 +125,19 @@
       <find>labor</find>
       <find>CASCADE</find>
       <find>unique</find>
-      <find>targe</find>
       <find>task</find>
+      <find>targe</find>
+      <find>date,</find>
+      <find>= class</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
       <replace>animalGroup</replace>
       <replace>CASCADE</replace>
+      <replace>models.CharField(max_length=</replace>
+      <replace>= models.CharField(max_length=</replace>
+      <replace>class</replace>
+      <replace>= models.BooleanField(Default+True)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -815,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/farmdb/models/farmData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="102" column="49" lean-forward="false" selection-start-line="102" selection-start-column="49" selection-end-line="102" selection-end-column="49" />
+        <state relative-caret-position="-1331">
+          <caret line="237" column="52" lean-forward="true" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
