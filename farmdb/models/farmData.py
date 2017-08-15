@@ -98,7 +98,7 @@ class extUnits(models.Model):
 
 # dfTables
 
-class Tools(models.Model):
+class Tool(models.Model):
     tool_name = models.CharField(max_length=30)
     type = models.CharField(max_length=30)
 
@@ -214,7 +214,7 @@ class SeedingMethod(models.Model):
 
 class coverSeedList(models.Model):
    seed_method = models.ForeignKey(SeedingMethod,on_delete=models.CASCADE)
-   incorp_tool = models.ForeignKey(Tools,on_delete=models.CASCADE)
+   incorp_tool = models.ForeignKey(Tool,on_delete=models.CASCADE)
    comments = models.TextField(),
    seedDate = models.DateField()
    fieldID = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
@@ -231,18 +231,15 @@ class coverSeed(models.Model):
 class coverKill_master(models.Model):
    killDate = models.DateField()
    seedDate = models.DateField()
-   incorpTool = models.CharField(max_length=30),
+   incorpTool = models.ForeignKey(Tool,on_delete=models.CASCADE)
    totalBiomass = models.DecimalField(max_digits=8,decimal_places=2)
    comments = models.TextField(),
-   fieldID = models.CharField(max_length=30),
-   foreign key(fieldID) references field_GH(fieldID) on update cascade,
-   foreign key(incorpTool) references tools(tool_name) on update cascade
-) ENGINE=INNODB;
+   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
 
 class coverKill(models.Model):
-   id = models.IntegerField()
+   coverKill = models.ForeignKey(coverKill_master.pk,on_delete=models.CASCADE)
    seedDate = models.DateField()
-   coverCrop = models.CharField(max_length=30),
+   coverCrop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
    foreign key(coverCrop) references coverCrop(crop) on update cascade,
 foreign key(id) references coverKill_master(id)
 
@@ -254,7 +251,7 @@ class tSprayMaster(models.Model):
    waterPerAcre = models.IntegerField()
    comment = models.TextField(),
    user = models.CharField(max_length=50),
-   complete = models.BooleanField(default+True)
+   complete = models.BooleanField(default=True)
    initials = models.CharField(max_length=8, blank= True)
 
 
@@ -363,8 +360,8 @@ class liquidFertilizerReference(models.Model):
 
 class fertilizer(models.Model):
    inputDate = models.DateField()
-   fieldID = models.CharField(max_length=30),
-   fertilizer = models.CharField(max_length=30)
+   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   fertilizer == models.ForeignKey(fertilizerReference,on_delete=models.CASCADE)
    farmer = models.ForeignKey(Farmer,on_delete=models.CASCADE)
    crops = models.TextField()
    rate = models.DecimalField(max_digits=8,decimal_places=2)
