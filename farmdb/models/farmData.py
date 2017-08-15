@@ -218,8 +218,8 @@ class coverSeedList(models.Model):
    comments = models.TextField(),
    seedDate = models.DateField()
    fieldID = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
-   area_seeded =models.DecimalField(max_length=8,decimal_places=2)
-   
+   area_seeded =models.DecimalField(max_digits=8,decimal_places=2)
+
 # Why is there coverseedMaster and coverseed?
 class coverSeed(models.Model):
    crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
@@ -242,10 +242,10 @@ class coverKill_master(models.Model):
 class coverKill(models.Model):
    id = models.IntegerField()
    seedDate = models.DateField()
-   coverCrop = models.CharField(max_length=30), 
+   coverCrop = models.CharField(max_length=30),
    foreign key(coverCrop) references coverCrop(crop) on update cascade,
 foreign key(id) references coverKill_master(id)
-   
+
 
 class tSprayMaster(models.Model):
    sprayDate = models.DateField()
@@ -269,12 +269,12 @@ class tSprayField(models.Model):
 
 class tSprayMaterials(models.Model):
    sprayMaterial = models.CharField(max_length=30)
-   TRateUnits = models.CharField(max_length=30), 
-   TRateMin = models.DecimalField(max_digits=8,decimal_places=2)TRateMax = models.DecimalField(max_digits=8,decimal_places=2) 
+   TRateUnits = models.CharField(max_length=30),
+   TRateMin = models.DecimalField(max_digits=8,decimal_places=2)TRateMax = models.DecimalField(max_digits=8,decimal_places=2)
    TRateDefault = models.DecimalField(max_digits=8,decimal_places=2) BRateUnits = models.CharField(max_length=30),
-   BRateMin = models.DecimalField(max_digits=8,decimal_places=2)BRateMax = models.DecimalField(max_digits=8,decimal_places=2) 
-   BRateDefault = models.DecimalField(max_digits=8,decimal_places=2) REI_HRS = models.CharField(max_length=20), 
-   PPE = models.CharField(max_length=30), 
+   BRateMin = models.DecimalField(max_digits=8,decimal_places=2)BRateMax = models.DecimalField(max_digits=8,decimal_places=2)
+   BRateDefault = models.DecimalField(max_digits=8,decimal_places=2) REI_HRS = models.CharField(max_length=20),
+   PPE = models.CharField(max_length=30),
    active = models.BooleanField(default=True)
 
 class tSprayWater(models.Model):
@@ -323,7 +323,7 @@ class weedScout(models.Model):
    weed = models.CharField(max_length=30),
    infestLevel = models.IntegerField()
    goneToSeed = models.IntegerField()
-   comments = models.TextField(), 
+   comments = models.TextField(),
    hours =models.DecimalField(max_digits=8,decimal_places=2)
    filename = models.FileField(default=None,null=True)
    foreign key(weed) references weed(weedName) on update cascade,
@@ -347,46 +347,55 @@ class tillage(models.Model):
 
 
 
+# Do we need two different databases for these?
 class fertilizerReference(models.Model):
-    fertilizerName = models.CharField(max_length=30) primary key,
+    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
+    fertilizerName = models.CharField(max_length=30)
     active = models.BooleanField(default=True)
 
+    class Meta:
+        unique_together=('farm','fertilizerName')
+
 class liquidFertilizerReference(models.Model):
-   fertilizerName = models.CharField(max_length=30) primary key,
-   active tinyint(1) default 1) ENGINE=INNODB;
+   farm = models.ForeignKey(Farm,on_delete=models.CASCADE)
+   fertilizerName = models.CharField(max_length=30)
+   active = models.BooleanField(default=True)
 
 class fertilizer(models.Model):
-   id int NOT NULL AUTO_INCREMENT primary key,
-   username = models.CharField(max_length=50),
    inputDate = models.DateField()
    fieldID = models.CharField(max_length=30),
-   fertilizer = models.CharField(max_length=30),
-   crops = models.TextField(), rate float not null,
-   numBeds int not null,
-   totalApply float not null,
+   fertilizer = models.CharField(max_length=30)
+   farmer = models.ForeignKey(Farmer,on_delete=models.CASCADE)
+   crops = models.TextField()
+   rate = models.DecimalField(max_digits=8,decimal_places=2)
+   numBeds = models.PositiveIntegerField()
+   totalApply = models.DecimalField(max_digits=8,decimal_places=2)
    comments = models.TextField(),
-   hours float default 0,
+   hours = models.DecimalField(max_digits=8,decimal_places=2)
    foreign key(fieldID) references field_GH(fieldId) on update cascade,
    foreign key(fertilizer) references fertilizerReference(fertilizerName) on update cascade
-   ) ENGINE = INNODB;
+
 
 class liquid_fertilizer(models.Model):
-   id int NOT NULL AUTO_INCREMENT primary key,
-   fieldID = models.CharField(max_length=30),
-   username = models.CharField(max_length=50),
+   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   farmer =models.ForeignKey(Farmer,on_delete=models.CASCADE)
    inputDate = models.DateField()
    fertilizer = models.CharField(max_length=30),
    quantity = models.DecimalField(max_digits=8,decimal_places=2)
-   dripRows int(11),
-   unit = models.CharField(max_length=30),
-   comments = models.CharField(max_length=30),
-   hours float default 0,
+   dripRows = models.PositiveIntegerField()
+   unit = models.CharField(max_length=30)
+   comments = models.CharField(max_length=30)
+   hours = models.DecimalField(max_digits=8,decimal_places=2)
    foreign key(fieldID) references field_GH(fieldId) on update cascade,
    foreign key(fertilizer) references liquidFertilizerReference(fertilizerName) on update cascade
-   ) ENGINE=INNODB;
 
+# Mabye add default and the farm name here
 class stage(models.Model):
-   stage = models.CharField(max_length=30) primary key) ENGINE=INNODB;
+    farm =  models.ForeignKey(Farm,on_delete=models.CASCADE)
+    stage = models.CharField(max_length=30)
+
+    class Meta:
+        unique_together=('farm','stage')
 
 # insert into stage values('ESTABLISHING');
 # insert into stage values('HARVEST READY');
@@ -395,7 +404,11 @@ class stage(models.Model):
 # insert into stage values('POST HARVEST');
 
 class disease (models.Model):
-   diseaseName = models.CharField(max_length=30) primary key) ENGINE=INNODB;
+    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
+    diseaseName = models.CharField(max_length=30)
+
+    class Meta:
+       unique_together = ('farm', 'stage')
 
 class diseaseScout(models.Model):
    sDate = models.DateField()
@@ -405,228 +418,199 @@ class diseaseScout(models.Model):
    infest = models.IntegerField()
    stage = models.CharField(max_length=30),
    comments = models.TextField(),
-   hours float default 0,
-   id int NOT NULL AUTO_INCREMENT primary key,
-   filename = models.CharField(max_length=200) default null,
+   hours = models.DecimalField(max_digits=8,decimal_places=2)
+   filename = models.FileField(default=None,null=True)
    foreign key(fieldID) references field_GH(fieldID) on update cascade,
    foreign key(disease) references disease(diseaseName) on update cascade,
    foreign key(stage) references stage(stage) on update cascade) ENGINE=INNODB;
 
 class pack (models.Model):
-   packDate = models.DateField() 
-   crop_product = models.CharField(max_length=30), 
-   grade int(1),
+   packDate = models.DateField()
+   crop_product = models.CharField(max_length=30)
+   grade = models.PositiveIntegerField()
    amount = models.DecimalField(max_digits=8,decimal_places=2)
-   unit = models.CharField(max_length=30),
-   comments = models.TextField(),
-   bringBack tinyint(1), 
-   Target = models.CharField(max_length=30),
-   id int NOT NULL AUTO_INCREMENT primary key,
+   unit = models.CharField(max_length=30)
+   comments = models.TextField()
+   bringBack =models.Boolean(default=True)
+   Target = models.CharField(max_length=30)
    foreign key(Target) references targets(targetName) on update cascade
-) ENGINE=INNODB;
+
 
 class distribution (models.Model):
-   distDate = models.DateField() 
-   crop_product = models.CharField(max_length=30), 
-   grade int(1), 
-   target = models.CharField(max_length=30), 
-   amount = models.DecimalField(max_digits=8,decimal_places=2) 
-   unit = models.CharField(max_length=30), 
-   pricePerUnit double default 0,
-   comments = models.TextField(), 
-   id int NOT NULL AUTO_INCREMENT primary key,
+   distDate = models.DateField()
+   crop_product = models.CharField(max_length=30),
+   grade = models.PositiveIntegerField()
+   target = models.CharField(max_length=30),
+   amount = models.DecimalField(max_digits=8,decimal_places=2)
+   unit = models.CharField(max_length=30),
+   pricePerUnit = models.DecimalField(max_digits=8,decimal_places=2,default=0)
+   comments = models.TextField(),
    foreign key(target) references targets(targetName) on update cascade
-) ENGINE=INNODB;
 
 
 class correct (models.Model):
-   id int auto_increment not null,
    correctDate = models.DateField()
-   crop_product = models.CharField(max_length=30),
+   crop_product = models.CharField(max_length=30)
    grade = models.IntegerField()
    amount = models.DecimalField(max_digits=8,decimal_places=2)
-   unit = models.CharField(max_length=30),
-   primary key (id)
-) ENGINE=INNODB;
+   unit = models.CharField(max_length=30)
 
-class irrigation_device(models.Model):
-   id int primary key not null auto_increment,
-   irrigation_device = models.CharField(max_length=30) not null,
-   unique(irrigation_device)
-) ENGINE=INNODB; 
+class IrrigationDevice(models.Model):
+    farm = models.ForeignKey(Farm,on_delete=models.CASCADE)
+    irrigation_device = models.CharField(max_length=30)
+
+   class Meta:
+       unique_together= ('farm','irrigation_device')
 
 class pump_master (models.Model):
-   id int NOT NULL AUTO_INCREMENT primary key,
    pumpDate = models.DateField()
-   valve_open = models.TextField(),
+   valve_open = models.TextField()
    driveHZ = models.DecimalField(max_digits=8,decimal_places=2)
    outlet_psi = models.IntegerField()
    pump_kwh = models.DecimalField(max_digits=8,decimal_places=2)
    solar_kwh = models.DecimalField(max_digits=8,decimal_places=2)
-   comment = models.TextField(),
+   comment = models.TextField()
    rain = models.DecimalField(max_digits=8,decimal_places=2)
-   run_time int)
-ENGINE=INNODB;
+   run_time =models.PositiveIntegerField()
+
 
 
 class pump_field ( models.Model):
-   id int not null, 
-   fieldID = models.CharField(max_length=30) not null,
-   irr_device = models.CharField(max_length=30) not null,
-   elapsed_time = models.IntegerField() 
-   foreign key (id) references pump_master(id) on delete cascade on update cascade, 
+   fieldID = models.CharField(max_length=30)
+   irr_device = models.CharField(max_length=30)
+   elapsed_time = models.IntegerField()
+   foreign key (id) references pump_master(id) on delete cascade on update cascade,
    foreign key (irr_device) references irrigation_device(irrigation_device) on update cascade) engine=INNODB;
 
 class field_irrigation(models.Model):
-   fieldID = models.CharField(max_length=30) not null,
-   elapsed_time int not null,
-   irr_device = models.CharField(max_length=30),
+   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   elapsed_time = models.DecimalField(max_digits=8,decimal_places=2)
+   irr_device=  models.ForeignKey(IrrigationDevice,on_delete=models.CASCADE)
    start_time = models.IntegerField()
-   constraint foreign key (fieldID) references field_GH(fieldID) on update
-cascade,
-   constraint foreign key (irr_device) references
-irrigation_device(irrigation_device) on update cascade) ENGINE=INNODB;
+
 
 class pump_log_temp (models.Model):
-  pumpDate date NOT NULL,
-  valve_open = models.TextField(),
-  driveHZ float NOT NULL,
-  outlet_psi int(11) NOT NULL,
-  pump_kwh float NOT NULL,
-  solar_kwh float NOT NULL,
+  pumpDate =models.DateField(default=timezone.now)
+  valve_open = models.TextField()
+  driveHZ =models.DecimalField(max_digits=8,decimal_places=2)
+  outlet_psi =models.IntegerField()
+  pump_kwh =models.DecimalField(max_digits=8,decimal_places=2)
+  solar_kwh =models.DecimalField(max_digits=8,decimal_places=2)
   comment = models.TextField(),
-  start_time int
-) ENGINE=INNODB;
+  start_time =models.TimeField(default=timezone.now)
 
 class utilized_on (models.Model):
-  util_date date NOT NULL,
-  fieldID = models.CharField(max_length=30) NOT NULL,
-  incorpTool = models.CharField(max_length=30) NOT NULL,
-  pileID = models.CharField(max_length=30) NOT NULL,
+  util_date = models.DateField(default=timezone.now)
+  fieldID = models.CharField(max_length=30)
+  incorpTool = models.CharField(max_length=30)
+  pileID = models.CharField(max_length=30)
   tperacre = models.DecimalField(max_digits=8,decimal_places=2)
   incorpTiming = models.CharField(max_length=30),
   fieldSpread = models.DecimalField(max_digits=8,decimal_places=2)
-  comments = models.TextField(),
-  id int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (id),
-  UNIQUE util_date (util_= models.DateField()fieldID,incorpTool,pileID),
+  comments = models.TextField()
+   UNIQUE util_date (util_= models.DateField()fieldID,incorpTool,pileID),
    FOREIGN KEY (incorpTool) REFERENCES tools (tool_name) ON UPDATE CASCADE,
    FOREIGN KEY (fieldID) REFERENCES field_GH (fieldID) ON UPDATE CASCADE,
    FOREIGN KEY (pileID) REFERENCES compost_pile (pileID) ON UPDATE CASCADE
-) ENGINE=InnoDB;
+
 
 class seedInfo (models.Model):
-   crop = models.CharField(max_length=30) not null primary key,
+   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
    seedsGram = models.DecimalField(max_digits=8,decimal_places=2)
    seedsRowFt = models.DecimalField(max_digits=8,decimal_places=2)
-   defUnit = models.CharField(max_length=10),
-   foreign key (crop) references plant(crop) on update cascade)
-   ENGINE=InnoDB;
+   defUnit = models.CharField(max_length=10)
 
 class coverSeedInfo (models.Model):
-   crop = models.CharField(max_length=30) not null primary key,
+   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
    rate = models.DecimalField(max_digits=8,decimal_places=2)
-   foreign key (crop) references coverCrop(crop) on update cascade)
-ENGINE=InnoDB;
+
 
 class coverToOrder (models.Model):
-   crop = models.CharField(max_length=30) not null,
+   crop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
    year = models.IntegerField()
-   acres float default 0,
-   nextNum int not null default 1,
-   primary key (crop, year),
-   foreign key (crop) references coverCrop(crop) on update cascade)
-ENGINE=InnoDB;
+   acres = models.DecimalField(max_digits=8,decimal_places=2)
+   nextNum = models.PositiveIntegerField(default=1)
+
+   class Meta:
+       unique_together = ('crop','year')
 
 class variety (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   primary key (crop, variety),
-   foreign key (crop) references plant(crop) on update cascade)
-   ENGINE=InnoDB;
+   crop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+
+      class Meta:
+       unique_together = ('crop','variety')
 
 class coverVariety (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   primary key (crop, variety),
-   foreign key (crop) references coverCrop(crop) on update cascade)
-   ENGINE=InnoDB;
+   crop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+
+   class Meta:
+       unique_together = ('crop','variety')
 
 class source (models.Model):
-   source = models.CharField(max_length=50) not null primary key) ENGINE=InnoDB;
+   source = models.CharField(max_length=50)
 
 class toOrder (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   year int not null,
-   rowFt float not null default 0,
-   nextNum int not null default 1,
-   foreign key (crop) references plant(crop) on update cascade)
-   ENGINE=InnoDB;
+   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   year = models.PositiveIntegerField()
+   rowFt = models.DecimalField(max_digits=8,decimal_places=2)
+   nextNum = models.PositiveIntegerField(default=1)
 
 class orderItem (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   year int not null,
-   source = models.CharField(max_length=50) not null,
+   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+   year = models.PositiveIntegerField()
+   source = models.CharField(max_length=50)
    catalogOrder = models.CharField(max_length=30),
-   organic tinyint(1) default 1,
-   catalogUnit = models.CharField(max_length=30),
+   organic = models.BooleanField(default=True)
+   catalogUnit = models.CharField(max_length=30)
    price = models.DecimalField(max_digits=8,decimal_places=2)
-   unitsPerCatUnit real,
+   unitsPerCatUnit = models.DecimalField(max_digits=8,decimal_places=2)
    catUnitsOrdered = models.IntegerField()
-   status = models.CharField(max_length=10) default 'PENDING',
+   status = models.CharField(max_length=10, default= 'PENDING')
    source1 = models.CharField(max_length=50),
    sdate1 = models.DateField()
    source2 = models.CharField(max_length=50),
    sdate2 = models.DateField()
    source3 = models.CharField(max_length=50),
    sdate3 = models.DateField()
-   id int not null,
-   foreign key (crop) references plant(crop) on update cascade)
-   ENGINE=InnoDB;
 
 class coverOrderItem (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   year int not null,
-   source = models.CharField(max_length=50) not null,
-   catalogOrder = models.CharField(max_length=30),
-   organic tinyint(1) default 1,
-   catalogUnit = models.CharField(max_length=30),
+   crop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+   year = models.PositiveIntegerField()
+   source = models.CharField(max_length=50)
+   catalogOrder = models.CharField(max_length=30)
+   organic = models.BooleanField(default=True)
+   catalogUnit = models.CharField(max_length=30)
    price = models.DecimalField(max_digits=8,decimal_places=2)
-   unitsPerCatUnit real,
+   unitsPerCatUnit = models.DecimalField(max_digits=8,decimal_places=2)
    catUnitsOrdered = models.IntegerField()
-   status = models.CharField(max_length=10) default 'PENDING',
+   status = models.CharField(max_length=10, default= 'PENDING')
    source1 = models.CharField(max_length=50),
    sdate1 = models.DateField()
    source2 = models.CharField(max_length=50),
    sdate2 = models.DateField()
    source3 = models.CharField(max_length=50),
    sdate3 = models.DateField()
-   id int not null,
-   foreign key (crop) references coverCrop(crop) on update cascade)
-   ENGINE=InnoDB;
 
 class seedInventory (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   year int not null,
-   code = models.CharField(max_length=20) not null,
-   rowFt float not null default 0,
-   inInventory float not null default 0,
-   foreign key(crop) references plant(crop) on update cascade)
-   ENGINE=InnoDB;
+   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+   year = models.PositiveIntegerField()
+   code = models.CharField(max_length=20)
+   rowFt = models.DecimalField(max_digits=8,decimal_places=2)
+   inInventory = models.DecimalField(max_digits=8,decimal_places=2,default=0)
 
 class coverSeedInventory (models.Model):
-   crop = models.CharField(max_length=30) not null,
-   variety = models.CharField(max_length=50) not null,
-   year int not null,
-   code = models.CharField(max_length=20) not null,
-   acres float not null default 0,
-   inInventory float not null default 0,
-   foreign key(crop) references coverCrop(crop) on update cascade)
-   ENGINE=InnoDB;
-    
+   crop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
+   variety = models.CharField(max_length=50)
+   year = models.PositiveIntegerField()
+   code = models.CharField(max_length=20)
+   acres = models.DecimalField(max_digits=8,decimal_places=2)
+   inInventory = models.DecimalField(max_digits=8,decimal_places=2,default=0)
+
 
 
 
