@@ -1,4 +1,4 @@
-# Need to change everything to manual imports
+# Need to change everything to explicit imports
 
+from .farm import Farm,FarmAdmin,Farmer,FarmerAdmin
 from .animalData import *
-from .farm import *

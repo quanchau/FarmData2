@@ -3,9 +3,9 @@ from .models import *
 
 admin.site.register(Farm,FarmAdmin)
 admin.site.register(Farmer,FarmerAdmin)
-admin.site.register(Animal_Group,Animal_GroupAdmin)
+admin.site.register(AnimalGroup,AnimalGroupAdmin)
 admin.site.register(Breed,BreedAdmin)
-admin.site.register(Sub_Group,Sub_GroupAdmin)
+admin.site.register(SubGroup,SubGroupAdmin)
 admin.site.register(Origin)
 admin.site.register(Animal)
 admin.site.register(Reason)

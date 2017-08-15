@@ -16,7 +16,7 @@ class Farm(models.Model):
 class FarmAdmin(admin.ModelAdmin):
     list_display = ('name', 'address', 'active', 'date_of_creation')
     search_fields = ('name', 'address')
-    list_filter = ('active',)
+    list_filter = ['active']
     date_hierarchy = 'date_of_creation'
     ordering = ('-date_of_creation',)
 
@@ -34,7 +34,7 @@ class Farmer(models.Model):
 
 class FarmerAdmin(admin.ModelAdmin):
     list_display = ('user', 'farm', 'gender', 'active', 'reg_date')
-    search_fields = 'farm'
-    list_filter = ('active',)
+    search_fields = ['farm']
+    list_filter = ['active']
     date_hierarchy = 'reg_date'
     ordering = ('-reg_date', 'user__last_name', 'user__first_name')

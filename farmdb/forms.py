@@ -16,4 +16,4 @@ class Animal_Group_Form(forms.ModelForm):
 
     class Meta:
         model = Breed
-        fields = ['farm', 'animal_group','active']
+        fields = ['farm', 'animalGroup','active']

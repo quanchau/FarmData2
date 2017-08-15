@@ -1,29 +1,28 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.contrib import admin
 from django.utils import timezone
 
+
 # The model imports.
 from .farm import Farm
-
+from .task import Task
 
 # The definitions
 
 class AnimalGroup(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    animal_group = models.CharField(max_length=50)
+    animalGroup = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.animal_group
+        return self.animalGroup
 
 
 class AnimalGroupAdmin(admin.ModelAdmin):
-    list_display = ('farm', 'animal_group', 'active')
-    search_fields = ('farm', 'animal_group')
+    list_display = ('farm', 'animalGroup', 'active')
+    search_fields = ('farm', 'animalGroup')
     list_filter = ('active',)
-    date_hierarchy = 'reg_date'
-    ordering = ('farm', 'animal_group')
+    ordering = ('farm', 'animalGroup')
 
 
 class Breed(models.Model):
@@ -33,14 +32,14 @@ class Breed(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        unique_together = ('animal_group', 'breed')
+        unique_together = ('animalGroup', 'breed')
 
     def __str__(self):
         return self.breed
 
 
 class BreedAdmin(admin.ModelAdmin):
-    list_display = ('farm', 'breed', 'active', 'animal_group')
+    list_display = ('farm', 'breed', 'active', 'animalGroup')
     search_fields = ('farm', 'breed')
     list_filter = ('active',)
     ordering = ('farm', 'breed')
@@ -53,7 +52,7 @@ class SubGroup(models.Model):
     active = models.BooleanField(default=True)
 
     class Meta:
-        unique_together = ('Farm', 'animal_group', 'sub_group')
+        unique_together = ('farm', 'animalGroup', 'subGroup')
 
     def __str__(self):
         return self.subGroup
@@ -94,7 +93,7 @@ class Animal(models.Model):
     filename = models.FileField()
     alive = models.BooleanField(default=True)
     comments = models.TextField()
-    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
     sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     origin = models.ForeignKey(Origin, on_delete=models.CASCADE)
@@ -104,7 +103,7 @@ class Animal(models.Model):
 
 
 class AnimalAdmin(admin.ModelAdmin):
-    list_display = Animal._meta.get_fields()
+    list_display = ('farm')
     search_fields = ('farm', 'name')
     list_filter = ('active',)
     ordering = ('farm', 'name')
@@ -157,6 +156,7 @@ class Meds_given(models.Model):
     def __str__(self):
         return self.medication
 
+
 class Egg_Log(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     collection_date = models.DateField()
@@ -165,6 +165,7 @@ class Egg_Log(models.Model):
 
     def __str__(self):
         return self.collection_date
+
 
 class Wormer(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -194,6 +195,7 @@ class Sheep_care(models.Model):
 
     def __str__(self):
         return self.animal
+
 
 class Forage(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -238,11 +240,10 @@ class Sale(models.Model):
     price_lb = models.DecimalField(max_digits=8, decimal_places=2)
     fees = models.DecimalField(max_digits=6, decimal_places=2)
     comments = models.TextField()
-    sale_date=models.DateField(auto_created=timezone.now)
+    sale_date = models.DateField(auto_created=timezone.now)
 
     def __str__(self):
         return self.animal
-
 
 
 class Slay_House(models.Model):
@@ -252,6 +253,7 @@ class Slay_House(models.Model):
 
     def __str__(self):
         return self.slay_house
+
 
 class Slaughter(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -268,6 +270,7 @@ class Slaughter(models.Model):
 
     def __str__(self):
         return self.animal
+
 
 class Other_Dest(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -286,6 +289,7 @@ class Other_Reason(models.Model):
     def __str__(self):
         self.reason
 
+
 class Other_Remove(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     animal = models.OneToOneField(Animal, on_delete=models.CASCADE)
@@ -297,6 +301,7 @@ class Other_Remove(models.Model):
 
     def __str__(self):
         return self.reason
+
 
 class Feed_Type(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -328,24 +333,18 @@ class Feed_Purchase(models.Model):
     purchase_date = models.DateField()
     type = models.ForeignKey(Feed_Type, on_delete=models.CASCADE)
     subtype = models.ForeignKey(Feed_Subtype, on_delete=models.CASCADE)
-    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     units = models.ForeignKey(Feed_Unit, on_delete=models.CASCADE)
     price_unit = models.DecimalField(max_digits=8, decimal_places=2)
     weight_unit = models.DecimalField(max_digits=8, decimal_places=2)
 
 
-class Task(models.Model):
-    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    task = models.CharField(max_length=50)
-    active = models.BooleanField(default=True)
-
-
 class Task_Master(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     comments = models.TextField()
-    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
@@ -357,7 +356,7 @@ class Task_Recurring(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     start_date = models.DateField()
     comments = models.TextField()
-    animal_group = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
