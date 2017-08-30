@@ -7,14 +7,14 @@ from .task import Task
 
 
 # Check if this is required
-class Field_GH(models.Model):
+class Field(models.Model):
     size = models.DecimalField(max_digits=8, decimal_places=2)
-    numberOfBeds = models.DecimalField(max_digits=5, decimal_places=2)  # I think this sound be integer
+    numberOfBeds = models.DecimalField(max_digits=5, decimal_places=2)  # I think this should be integer
     length = models.DecimalField(max_digits=8, decimal_places=2)
     active = models.BooleanField(default=True)
 
 
-class Plant(models.Model):
+class Crop(models.Model):
     crop = models.CharField(max_length=30)
     units = models.CharField(max_length=30)
     units_per_case = models.FloatField()
@@ -22,46 +22,45 @@ class Plant(models.Model):
     active = models.BooleanField(default=True)
 
 
-class labor(models.Model):
+class Labor(models.Model):
     ##The farmer who created the labor job? Or is it for the laborer himself?
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
-    # Labor add date?
-    ldate = models.DateField()
-    crop = models.CharField(max_length=30)
-    # Pretty sure this needs to be a FK for field_GH
-    fieldID = models.CharField(max_length=30)
+    # Labor add date or labor work date?
+    lDate = models.DateField(verbose='Labor Date')
+    crop = models.ForeignKey(Crop,on_delete=models.CASCADE)
+    field = models.ForeignKey(Field,on_delete=models.CASCADE)
     # Need to create a Task class
-    task = models.ForeignKey(Task)
+    task = models.ForeignKey(Task,on_delete=models.CASCADE)
     hours = models.DecimalField(max_digits=8, decimal_places=2)
     comments = models.TextField()
 
-
-class flat(models.Model):
+# What is this for?
+class Flat(models.Model):
     cells = models.IntegerField()
 
     def __str__(self):
         return str(self.cells)
 
 
-class transferred_to(models.Model):
+class TransferredTo(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
-    field = models.ForeignKey(Field_GH, on_delete=models.CASCADE)
-    crop = models.ForeignKey(Plant, on_delete=models.CASCADE)
-    fieldID = models.CharField(max_length=30)
-    bedft = models.DecimalField(max_digits=8, decimal_places=2)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
+    bedFt = models.DecimalField(max_digits=8, decimal_places=2)
     comments = models.TextField()
     rowsBed = models.PositiveIntegerField()
     hours = models.DecimalField(max_digits=8, decimal_places=2)
+    # What's this used for?
     gen = models.IntegerField(default=1)
     annual = models.BooleanField(default=True)
     lastHarvest = models.DateField()
 
 
-class harvested(models.Model):
+class Harvested(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
     harvestDate = models.DateField()
-    crop = models.ForeignKey(Plant, on_delete=models.CASCADE)
-    field = models.ForeignKey(Field_GH, on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE)
     produce = models.DecimalField(max_digits=8, decimal_places=2)
     comments = models.TextField()
     hours = models.DecimalField(max_digits=8, decimal_places=2)
@@ -76,15 +75,15 @@ class comments(models.Model):
     filename = models.FileField(default=None, null=True)
 
 
-class gh_seeding(models.Model):
+class GhSeeding(models.Model):
     farmer = models.ForeignKey(Farmer, on_delete=models.CASCADE)
-    crop = models.ForeignKey(Plant, on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
     seedDate = models.DateField()
     # Why are there two flat references?
     flats = models.DecimalField(max_digits=8, decimal_places=2)
     cellsFlat = models.IntegerField()
     gen = models.IntegerField(default=1)
-    numseeds_planted = models.PositiveIntegerField()
+    numSeedsPlanted = models.PositiveIntegerField()
     comments = models.TextField()
     varieties = models.TextField()
 
@@ -92,14 +91,14 @@ class gh_seeding(models.Model):
         unique_together = ('crop', 'seedDate', 'varieties')
 
 
-class extUnits(models.Model):
+class ExtUnits(models.Model):
     unit = models.CharField(max_length=30)
 
 
 # dfTables
 
 class Tool(models.Model):
-    tool_name = models.CharField(max_length=30)
+    toolName = models.CharField(max_length=30)
     type = models.CharField(max_length=30)
 
 
@@ -121,54 +120,54 @@ class TargetEmail(models.Model):
 
 
 class HarvestListItem(models.Model):
-    crop = models.ForeignKey(Plant, on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     units = models.CharField(max_length=10)
     harvestList = models.ForeignKey(Harvest, on_delete=models.CASCADE)
     target = models.ForeignKey(Target, models.CASCADE)
 
 
-class tractor(models.Model):
-    tractorName = models.CharField(max_length=30)
+class Tractor(models.Model):
+    Name = models.CharField(max_length=30)
     active = models.BooleanField(default=True)
 
 
-class compostMaterial(models.Model):
-    compostName = models.CharField(max_length=30)
+class CompostMaterial(models.Model):
+    name = models.CharField(max_length=30)
     description = models.TextField()
 
 
-class compostPile(models.Model):
-    compostMat = models.ForeignKey(compostMaterial, on_delete=models.CASCADE)
-    comments = models.TextField()
+class CompostPile(models.Model):
+    compostMat = models.ForeignKey(CompostMaterial, on_delete=models.CASCADE)
+    comments = models.TextField(blank=True)
     cDate = models.DateField(verbose_name='Compost Date')
     active = models.BooleanField(default=True)
 
 #What is compost activites and compost unit?
 
 #Not sure what the use of the class is. The compostPile should take care of everything
-class compost_units(models.Model):
-    materials = models.ForeignKey(compostMaterial,on_delete=models.CASCADE)
+class CompostUnits(models.Model):
+    materials = models.ForeignKey(CompostMaterial,on_delete=models.CASCADE)
     unit = models.CharField(max_length=30)
     pounds = models.DecimalField(max_digits=8,decimal_places=2)
     cubicYards = models.DecimalField(max_digits=8,decimal_places=2)
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
 
-class compost_activity(models.Model):
+class CompostActivity(models.Model):
     actDate = models.DateField()
-    pile= models.ForeignKey(compostPile,on_delete=models.CASCADE)
+    pile= models.ForeignKey(CompostPile,on_delete=models.CASCADE)
     activity=models.CharField(max_length=30)
     commments = models.TextField()
 
-class compost_temperature(models.Model):
+class CompostTemperature(models.Model):
     tempDate=models.DateField()
-    pile = models.ForeignKey(compostPile,on_delete=models.CASCADE)
+    pile = models.ForeignKey(CompostPile,on_delete=models.CASCADE)
     numReadings = models.IntegerField()
-    comments = models.TextField()
+    comments = models.TextField(blank=True)
 
 # Insert values
 
-#I think we need universal units. Not just for crops
+#I think we need universal units for everything. Not just for crops
 
 # Need to get this classes checks by Matt
 class units(models.Model):
@@ -181,16 +180,16 @@ class product(models.Model):
     dh_units = models.CharField(max_length=30)
     active = models.BooleanField(default=True)
 
-class invoice_master(models.Model):
+class invoiceMaster(models.Model):
     invoice_no = models.AutoField(primary_key=True)
     invoide_id = models.CharField(max_length=30,unique=True)
     salesDate = models.DateField(default=timezone.now)
     approved_by = models.CharField(max_length=30)
     target = models.ForeignKey(Target,on_delete=models.CASCADE)
-    comments= models.TextField()
+    comments= models.TextField(blank=True)
 
-class invoice_entry(models.Model):
-    invoice_master=models.ForeignKey(invoice_master,on_delete=models.CASCADE)
+class invoiceEntry(models.Model):
+    invoice_master=models.ForeignKey(invoiceMaster,on_delete=models.CASCADE)
     product = models.CharField(max_length=30)
     cases = models.DecimalField(max_digits=8,decimal_places=2)
     price_case = models.DecimalField(max_digits=8,decimal_places=2)
@@ -217,31 +216,29 @@ class coverSeedList(models.Model):
    incorp_tool = models.ForeignKey(Tool,on_delete=models.CASCADE)
    comments = models.TextField(),
    seedDate = models.DateField()
-   fieldID = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   fieldID = models.ForeignKey(Field, on_delete=models.CASCADE)
    area_seeded =models.DecimalField(max_digits=8,decimal_places=2)
 
 # Why is there coverseedMaster and coverseed?
 class coverSeed(models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    seedRate = models.DecimalField(max_digits=8,decimal_places=2)
    num_pounds = models.DecimalField(max_digits=8,decimal_places=2)
    coverSeed = models.IntegerField()
 
 
-class coverKill_master(models.Model):
+class CoverKillList(models.Model):
    killDate = models.DateField()
    seedDate = models.DateField()
    incorpTool = models.ForeignKey(Tool,on_delete=models.CASCADE)
    totalBiomass = models.DecimalField(max_digits=8,decimal_places=2)
    comments = models.TextField(),
-   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   field = models.ForeignKey(Field, on_delete=models.CASCADE)
 
-class coverKill(models.Model):
-   coverKill = models.ForeignKey(coverKill_master.pk,on_delete=models.CASCADE)
+class CoverKill(models.Model):
+   coverKill = models.ForeignKey(CoverKillList, on_delete=models.CASCADE)
    seedDate = models.DateField()
    coverCrop = models.ForeignKey(CoverCrop,on_delete=models.CASCADE)
-   foreign key(coverCrop) references coverCrop(crop) on update cascade,
-foreign key(id) references coverKill_master(id)
 
 
 class tSprayMaster(models.Model):
@@ -360,7 +357,7 @@ class liquidFertilizerReference(models.Model):
 
 class fertilizer(models.Model):
    inputDate = models.DateField()
-   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   field = models.ForeignKey(Field, on_delete=models.CASCADE)
    fertilizer == models.ForeignKey(fertilizerReference,on_delete=models.CASCADE)
    farmer = models.ForeignKey(Farmer,on_delete=models.CASCADE)
    crops = models.TextField()
@@ -374,7 +371,7 @@ class fertilizer(models.Model):
 
 
 class liquid_fertilizer(models.Model):
-   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   field = models.ForeignKey(Field, on_delete=models.CASCADE)
    farmer =models.ForeignKey(Farmer,on_delete=models.CASCADE)
    inputDate = models.DateField()
    fertilizer = models.CharField(max_length=30),
@@ -480,7 +477,7 @@ class pump_field ( models.Model):
    foreign key (irr_device) references irrigation_device(irrigation_device) on update cascade) engine=INNODB;
 
 class field_irrigation(models.Model):
-   field = models.ForeignKey(Field_GH,on_delete=models.CASCADE)
+   field = models.ForeignKey(Field, on_delete=models.CASCADE)
    elapsed_time = models.DecimalField(max_digits=8,decimal_places=2)
    irr_device=  models.ForeignKey(IrrigationDevice,on_delete=models.CASCADE)
    start_time = models.IntegerField()
@@ -512,13 +509,13 @@ class utilized_on (models.Model):
 
 
 class seedInfo (models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    seedsGram = models.DecimalField(max_digits=8,decimal_places=2)
    seedsRowFt = models.DecimalField(max_digits=8,decimal_places=2)
    defUnit = models.CharField(max_length=10)
 
 class coverSeedInfo (models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    rate = models.DecimalField(max_digits=8,decimal_places=2)
 
 
@@ -549,13 +546,13 @@ class source (models.Model):
    source = models.CharField(max_length=50)
 
 class toOrder (models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    year = models.PositiveIntegerField()
    rowFt = models.DecimalField(max_digits=8,decimal_places=2)
    nextNum = models.PositiveIntegerField(default=1)
 
 class orderItem (models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    variety = models.CharField(max_length=50)
    year = models.PositiveIntegerField()
    source = models.CharField(max_length=50)
@@ -593,7 +590,7 @@ class coverOrderItem (models.Model):
    sdate3 = models.DateField()
 
 class seedInventory (models.Model):
-   crop = models.ForeignKey(Plant,on_delete=models.CASCADE)
+   crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
    variety = models.CharField(max_length=50)
    year = models.PositiveIntegerField()
    code = models.CharField(max_length=20)
