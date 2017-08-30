@@ -5,7 +5,6 @@ from django.utils import timezone
 
 # The model imports.
 from .farm import Farm
-from .task import Task
 
 # The definitions
 
@@ -338,26 +337,3 @@ class Feed_Purchase(models.Model):
     units = models.ForeignKey(Feed_Unit, on_delete=models.CASCADE)
     price_unit = models.DecimalField(max_digits=8, decimal_places=2)
     weight_unit = models.DecimalField(max_digits=8, decimal_places=2)
-
-
-class Task_Master(models.Model):
-    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    comments = models.TextField()
-    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
-    workers = models.IntegerField()
-    minutes = models.IntegerField()
-    complete = models.BooleanField(default=False)
-
-
-class Task_Recurring(models.Model):
-    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    start_date = models.DateField()
-    comments = models.TextField()
-    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
-    workers = models.IntegerField()
-    minutes = models.IntegerField()
-    recur = models.CharField(max_length=15)
