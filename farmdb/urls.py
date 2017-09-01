@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     # Solely for testing. This should always be empty otherwise
-    url(r'^$', views.index, name='test'),
+    url(r'^login/', views.login_user, name='login'),
     # url(r'^$', views.create_farmer, name='create_farmer'),
 
     # The actual urls

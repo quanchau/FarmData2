@@ -2,19 +2,17 @@
 <html>
 
 <head>
-    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}AnimalDB{% endblock %}</title>
+    <title>Base_App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="../../static/farmdb/assets/css/styles.min.css">
-    <link rel="stylesheet" href="{% static 'farmdb/assets/css/styles.min.css'%}">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
-<body style="font-family:Comic Sans MS, Comic Sans, cursive;">
+<body>
     <div>
         <nav class="navbar navbar-default navbar-inverse" id="navbase">
             <div class="container">
@@ -31,18 +29,6 @@
                 </div>
             </div>
         </nav>
-    </div>
-    <div id='bodyWrapper' class="container">
-        {% block body%}
-        {% endblock %}
-    </div>
-    <div class="footer-basic inverse" style="/*background:#282d32;*/">
-        <footer>
-            <div class="social"><a href="#" style="color:white;"><i class="icon ion-social-facebook" style="color:white;"></i></a><a href="#"><i class="icon ion-email" style="color:white;"></i></a><a href="#"><i class="icon ion-social-github" style="color:white;"></i></a></div>
-            <p
-            class="copyright" style="text-align:center;">This contents and database schemas of this site are licensed under GPL v3.0</p>
-                <p class="copyright">FarmDev © 2017</p>
-        </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

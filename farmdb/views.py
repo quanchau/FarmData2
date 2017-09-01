@@ -9,7 +9,23 @@ from .models import *
 
 
 def index(request):
-    return render(request,'farmdb/test.html')
+    return HttpResponse('<h1>I am index</h1>')
+
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return HttpResponse('<h1>I am a passenger</h1>')
+            else:
+                return render(request, 'website/login.html', {'error_message': 'Your account has been disabled'})
+        else:
+            return render(request, 'website/login.html', {'error_message': 'Invalid username or password'})
+    return render(request, 'farmdb/login.html')
 
 def create_farmer(request):
     form = Create_Farmer_Form(request.POST or None)
