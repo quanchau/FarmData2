@@ -11,7 +11,7 @@ class Task(models.Model):
     active = models.BooleanField(default=True)
 
 
-class Task_Master(models.Model):
+class TaskMaster(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     comments = models.TextField()
@@ -22,7 +22,7 @@ class Task_Master(models.Model):
     complete = models.BooleanField(default=False)
 
 
-class Task_Recurring(models.Model):
+class TaskRecurring(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     start_date = models.DateField()

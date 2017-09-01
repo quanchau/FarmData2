@@ -131,8 +131,8 @@ class Vet(models.Model):
     assistants = models.CharField(max_length=100, blank=True)
     comments = models.TextField(blank=True)
 
-    def __str__(self):
-        return self.reason
+    # def __str__(self):
+    #     return self.reason
 
 
 class Medication(models.Model):
@@ -145,25 +145,25 @@ class Medication(models.Model):
         return self.medication
 
 
-class Meds_given(models.Model):
+class MedsGiven(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     medication = models.ForeignKey(Medication, on_delete=models.CASCADE)
     units = models.SmallIntegerField
     units_given = models.FloatField
     vet_id = models.ForeignKey(Vet, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.medication
+    # def __str__(self):
+    #     return self.medication
 
 
-class Egg_Log(models.Model):
+class EggLog(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     collection_date = models.DateField()
     number = models.IntegerField()
     comments = models.TextField(max_length=300)
 
-    def __str__(self):
-        return self.collection_date
+    # def __str__(self):
+    #     return self.collection_date
 
 
 class Wormer(models.Model):
@@ -175,7 +175,7 @@ class Wormer(models.Model):
         return self.wormer
 
 
-class Sheep_care(models.Model):
+class SheepCare(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     care_date = models.DateField()
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
@@ -192,8 +192,8 @@ class Sheep_care(models.Model):
     estimated = models.CharField(max_length=9)
     comments = models.TextField()
 
-    def __str__(self):
-        return self.animal
+    # def __str__(self):
+    #     return self.animal
 
 
 class Forage(models.Model):
@@ -241,11 +241,11 @@ class Sale(models.Model):
     comments = models.TextField()
     sale_date = models.DateField(auto_created=timezone.now)
 
-    def __str__(self):
-        return self.animal
+    # def __str__(self):
+    #     return self.animal
 
 
-class Slay_House(models.Model):
+class SlayHouse(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     slay_house = models.CharField(max_length=200)
     active = models.BooleanField()
@@ -258,7 +258,7 @@ class Slaughter(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     animal = models.OneToOneField(Animal, on_delete=models.CASCADE)
     sale_tag = models.CharField(max_length=50)  # I suspect this should be a foreign key with the table sale
-    slay_house = models.ForeignKey(Slay_House, on_delete=models.CASCADE)
+    slay_house = models.ForeignKey(SlayHouse, on_delete=models.CASCADE)
     hauler = models.CharField(max_length=200)
     haul_equip = models.CharField(max_length=200)
     slay_date = models.DateField()
@@ -267,11 +267,11 @@ class Slaughter(models.Model):
     fees = models.DecimalField(max_digits=5, decimal_places=2)
     comments = models.TextField()
 
-    def __str__(self):
-        return self.animal
+    # def __str__(self):
+    #     return self.animal
 
 
-class Other_Dest(models.Model):
+class OtherDest(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     reason = models.CharField(max_length=50)
     active = models.BooleanField()
@@ -280,7 +280,7 @@ class Other_Dest(models.Model):
         return self.reason
 
 
-class Other_Reason(models.Model):
+class OtherReason(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     reason = models.CharField(max_length=50)
     active = models.BooleanField()
@@ -289,33 +289,33 @@ class Other_Reason(models.Model):
         self.reason
 
 
-class Other_Remove(models.Model):
+class OtherRemove(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     animal = models.OneToOneField(Animal, on_delete=models.CASCADE)
     remove_date = models.DateField()
-    reason = models.ForeignKey(Other_Reason, on_delete=models.CASCADE)
-    destination = models.ForeignKey(Other_Dest, on_delete=models.CASCADE)
+    reason = models.ForeignKey(OtherReason, on_delete=models.CASCADE)
+    destination = models.ForeignKey(OtherDest, on_delete=models.CASCADE)
     weight = models.PositiveSmallIntegerField()
     comments = models.TextField()
 
-    def __str__(self):
-        return self.reason
+    # def __str__(self):
+        # return self.reason
 
 
-class Feed_Type(models.Model):
+class FeedType(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     type = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
 
 
-class Feed_Subtype(models.Model):
-    farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    type = models.ForeignKey(Feed_Type, on_delete=models.CASCADE)
-    subtype = models.CharField(max_length=50)
-    active = models.BooleanField(default=True)
+# class FeedSubtype(models.Model):
+#     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
+#     type = models.ForeignKey(FeedType, on_delete=models.CASCADE)
+#     subtype = models.CharField(max_length=50)
+#     active = models.BooleanField(default=True)
 
 
-class Feed_Unit(models.Model):
+class FeedUnit(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     unit = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
@@ -327,13 +327,13 @@ class Vendor(models.Model):
     active = models.BooleanField(default=True)
 
 
-class Feed_Purchase(models.Model):
+class FeedPurchase(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     purchase_date = models.DateField()
-    type = models.ForeignKey(Feed_Type, on_delete=models.CASCADE)
-    subtype = models.ForeignKey(Feed_Subtype, on_delete=models.CASCADE)
+    type = models.ForeignKey(FeedType, on_delete=models.CASCADE)
+    # subtype = models.ForeignKey(FeedSubtype, on_delete=models.CASCADE)
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    units = models.ForeignKey(Feed_Unit, on_delete=models.CASCADE)
+    units = models.ForeignKey(FeedUnit, on_delete=models.CASCADE)
     price_unit = models.DecimalField(max_digits=8, decimal_places=2)
     weight_unit = models.DecimalField(max_digits=8, decimal_places=2)

@@ -1,4 +1,5 @@
 # Need to change everything to explicit imports
 
-from .farm import Farm,FarmAdmin,Farmer,FarmerAdmin
+from .farm import *
 from .animalData import *
+from .task import *
