@@ -26,15 +26,21 @@
                         <li class="active" role="presentation"><a href="#">Animal DB</a></li>
                         <li role="presentation"><a href="#">FAQ </a></li>
                         <li role="presentation"><a href="#">Contact Us</a></li>
-                        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-log-out"></i></a></li>
+                        <li role="presentation"><a href="{% url 'farmdb:logout' %}"><i class="glyphicon glyphicon-log-out"></i></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
     <div id='bodyWrapper' class="container">
+
+
         {% block body%}
+
+
         {% endblock %}
+
+
     </div>
     <div class="footer-basic inverse" style="/*background:#282d32;*/">
         <footer>

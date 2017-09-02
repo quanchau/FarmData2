@@ -1,15 +1,17 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+
 
 from .forms import *
 from .models import *
 
 # Create your views here.
 
-
+@login_required
 def index(request):
-    return HttpResponse('<h1>I am index</h1>')
+    return render(request,'farmdb/index.html')
 
 
 def login_user(request):
@@ -20,12 +22,16 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponse('<h1>I am a passenger</h1>')
+                return render(request,'farmdb/index.html')
             else:
-                return render(request, 'website/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'farmdb/login.html', {'error_message': 'Your account has been disabled'})
         else:
-            return render(request, 'website/login.html', {'error_message': 'Invalid username or password'})
+            return render(request, 'farmdb/login.html', {'error_message': 'Invalid username or password'})
     return render(request, 'farmdb/login.html')
+
+def logout_user(request):
+    logout(request)
+    return render(request, 'farmdb/login.html', {'logout': 'True'})
 
 def create_farmer(request):
     form = Create_Farmer_Form(request.POST or None)

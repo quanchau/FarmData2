@@ -104,6 +104,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+AUTH_PROFILE_MODULE = 'userprofile.Farmer'
+
+LOGOUT_REDIRECT_URL = 'farmdb:login'
+
+LOGIN_REDIRECT_URL = 'farmdb:login'
+
+LOGIN_URL = 'farmdb:login'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
