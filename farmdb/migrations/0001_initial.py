@@ -276,7 +276,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='SubGroup',
+            name='AnimalSubGroup',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('subGroup', models.CharField(max_length=50)),
@@ -304,7 +304,7 @@ class Migration(migrations.Migration):
                 ('complete', models.BooleanField(default=False)),
                 ('animalGroup', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.AnimalGroup')),
                 ('farm', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.Farm')),
-                ('sub_group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.SubGroup')),
+                ('sub_group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.models.animalData.AnimalSubGroup')),
                 ('task', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.Task')),
             ],
         ),
@@ -319,7 +319,7 @@ class Migration(migrations.Migration):
                 ('recur', models.CharField(max_length=15)),
                 ('animalGroup', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.AnimalGroup')),
                 ('farm', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.Farm')),
-                ('sub_group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.SubGroup')),
+                ('sub_group', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.models.animalData.AnimalSubGroup')),
                 ('task', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.Task')),
             ],
         ),
@@ -427,7 +427,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='animal',
             name='sub_group',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.SubGroup'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='farmdb.models.animalData.AnimalSubGroup'),
         ),
         migrations.AlterUniqueTogether(
             name='subgroup',

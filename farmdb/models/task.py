@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils import timezone
 
 from .farm import Farm
-from .animalData import AnimalGroup,SubGroup
+from .animalData import AnimalGroup,AnimalSubGroup
 
 class Task(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
@@ -16,7 +16,7 @@ class TaskMaster(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     comments = models.TextField()
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
+    sub_group = models.ForeignKey(AnimalSubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
     complete = models.BooleanField(default=False)
@@ -28,7 +28,7 @@ class TaskRecurring(models.Model):
     start_date = models.DateField()
     comments = models.TextField()
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
-    sub_group = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
+    sub_group = models.ForeignKey(AnimalSubGroup, on_delete=models.CASCADE)
     workers = models.IntegerField()
     minutes = models.IntegerField()
     recur = models.CharField(max_length=15)

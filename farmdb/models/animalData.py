@@ -44,9 +44,9 @@ class BreedAdmin(admin.ModelAdmin):
     ordering = ('farm', 'breed')
 
 
-class SubGroup(models.Model):
+class AnimalSubGroup(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    subGroup = models.CharField(max_length=50)
+    animalSubGroup = models.CharField(max_length=50)
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
 
@@ -54,7 +54,7 @@ class SubGroup(models.Model):
         unique_together = ('farm', 'animalGroup', 'subGroup')
 
     def __str__(self):
-        return self.subGroup
+        return self.animalSubGroup
 
 
 class SubGroupAdmin(admin.ModelAdmin):
@@ -94,7 +94,7 @@ class Animal(models.Model):
     comments = models.TextField(blank=True)
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    subGroup = models.ForeignKey(SubGroup, on_delete=models.CASCADE)
+    subGroup = models.ForeignKey(AnimalSubGroup, on_delete=models.CASCADE)
     origin = models.ForeignKey(Origin, on_delete=models.CASCADE)
 
     def __str__(self):

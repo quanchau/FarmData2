@@ -75,7 +75,7 @@ class AnimalGroupCreateView(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class BreedCreateView(CreateView):
-    template_name = "farmdb/createView/create_breed.html"
+    template_name = "farmdb/createView/create.html"
     model = Breed
     fields = ('breed', 'animalGroup',)
     success_url = '/'
@@ -88,17 +88,17 @@ class BreedCreateView(CreateView):
 
 
 @method_decorator(login_required, name='dispatch')
-class SubGroupCreateView(CreateView):
-    template_name = "farmdb/createView/create_subGroup.html"
-    model = SubGroup
-    fields = ('subGroup', 'animalGroup',)
+class AnimalSubGroupCreateView(CreateView):
+    template_name = "farmdb/createView/create_animalSubGroup.html"
+    model = AnimalSubGroup
+    fields = ('animalSubGroup', 'animalGroup',)
     success_url = '/'
 
     def form_valid(self, form):
         # Assign the farm from request.user
         form.instance.farm = self.request.user.farmer.farm
         form.instance.active = True
-        return super(SubGroupCreateView, self).form_valid(form)
+        return super(AnimalSubGroupCreateView, self).form_valid(form)
 
 
 @method_decorator(login_required, name='dispatch')
