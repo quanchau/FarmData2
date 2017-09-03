@@ -1,0 +1,30 @@
+{% extends "farmdb/base.html" %}
+{% load tz %}
+
+{% block body %}
+<h1><center><strong>Wormer</strong></center></h1>
+{% if wormer_list %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Farm</th>
+            <th>Wormer</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for wr in wormer_list %}
+        <tr>
+{#            <td>{{phoneCall.question_id}}</a></td>#}
+            <td>{{ wr.farm }}</td>
+            <td>{{ wr.wormer }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+{% endif %}
+{% endblock %}
+

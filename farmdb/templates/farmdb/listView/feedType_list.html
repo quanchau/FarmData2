@@ -1,0 +1,30 @@
+{% extends "farmdb/base.html" %}
+{% load tz %}
+
+{% block body %}
+<h1><center><strong>FeedType</strong></center></h1>
+{% if feedtype_list %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Farm</th>
+            <th>Feed Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ft in feedtype_list %}
+        <tr>
+{#            <td>{{phoneCall.question_id}}</a></td>#}
+            <td>{{ ft.farm }}</td>
+            <td>{{ ft.type }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+{% endif %}
+{% endblock %}
+

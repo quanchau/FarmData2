@@ -94,7 +94,7 @@ class Animal(models.Model):
     comments = models.TextField(blank=True)
     animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE)
-    subGroup = models.ForeignKey(AnimalSubGroup, on_delete=models.CASCADE)
+    animalSubGroup = models.ForeignKey(AnimalSubGroup, on_delete=models.CASCADE)
     origin = models.ForeignKey(Origin, on_delete=models.CASCADE)
 
     def __str__(self):

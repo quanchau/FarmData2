@@ -1,0 +1,31 @@
+{% extends "farmdb/base.html" %}
+{% load tz %}
+
+{% block body %}
+<h1><center><strong>Breed</strong></center></h1>
+{% if breed_list %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Farm</th>
+            <th>Breed</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bd in breed_list %}
+        <tr>
+{#            <td>{{phoneCall.question_id}}</a></td>#}
+            <td>{{ bd.farm }}</td>
+            <td>{{ bd.breed }}</td>
+            <td>{{ bd.animalGroup }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+{% endif %}
+{% endblock %}
+

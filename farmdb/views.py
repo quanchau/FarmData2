@@ -442,8 +442,8 @@ class FeedPurchaseCreateView(CreateView):
         form.instance.active = True
         return super(FeedPurchaseCreateView, self).form_valid(form)
 
-
 # ListViews
+
 
 @method_decorator(login_required, name='dispatch')
 class AnimalGroupListView(ListView):
@@ -452,3 +452,238 @@ class AnimalGroupListView(ListView):
 
     def get_queryset(self):
         return AnimalGroup.objects.filter(farm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class BreedListView(ListView):
+    model = Breed
+    template_name = 'farmdb/listView/breed_list.html'
+
+    def get_queryset(self):
+        return Breed.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class SubGroupListView(ListView):
+    model = AnimalSubGroup
+    template_name = 'farmdb/listView/animalSubGroup_list.html'
+
+    def get_queryset(self):
+        return AnimalSubGroup.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class OriginListView(ListView):
+    model = Origin
+    template_name = 'farmdb/listView/origin_list.html'
+
+    def get_queryset(self):
+        return Origin.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class AnimalListView(ListView):
+    model = Animal
+    template_name = 'farmdb/listView/animal_list.html'
+
+    def get_queryset(self):
+        return Animal.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class ReasonListView(ListView):
+    model = Reason
+    template_name = 'farmdb/listView/reason_list.html'
+
+    def get_queryset(self):
+        return Reason.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class VetListView(ListView):
+    model = Vet
+    template_name = 'farmdb/listView/vet_list.html'
+
+    def get_queryset(self):
+        return Vet.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class MedicationListView(ListView):
+    model = Medication
+    template_name = 'farmdb/listView/medication_list.html'
+
+    def get_queryset(self):
+        return Medication.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class MedsGivenListView(ListView):
+    model = MedsGiven
+    template_name = 'farmdb/listView/medsGiven_list.html'
+
+    def get_queryset(self):
+        return MedsGiven.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class EggLogListView(ListView):
+    model = EggLog
+    template_name = 'farmdb/listView/eggLog_list.html'
+
+    def get_queryset(self):
+        return EggLog.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class WormerListView(ListView):
+    model = Wormer
+    template_name = 'farmdb/listView/wormer_list.html'
+
+    def get_queryset(self):
+        return Wormer.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class SheepCareListView(ListView):
+    model = SheepCare
+    template_name = 'farmdb/listView/sheepCare_list.html'
+
+    def get_queryset(self):
+        return SheepCare.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class ForageListView(ListView):
+    model = Forage
+    template_name = 'farmdb/listView/forage_list.html'
+
+    def get_queryset(self):
+        return Forage.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class PaddockListView(ListView):
+    model = Paddock
+    template_name = 'farmdb/listView/paddock_list.html'
+
+    def get_queryset(self):
+        return Paddock.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class NoteListView(ListView):
+    model = Note
+    template_name = 'farmdb/listView/note_list.html'
+
+    def get_queryset(self):
+        return Note.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class DestinationListView(ListView):
+    model = Destination
+    template_name = 'farmdb/listView/destination_list.html'
+
+    def get_queryset(self):
+        return Destination.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class SaleListView(ListView):
+    model = Sale
+    template_name = 'farmdb/listView/sale_list.html'
+
+    def get_queryset(self):
+        return Sale.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class SlayHouseListView(ListView):
+    model = SlayHouse
+    template_name = 'farmdb/listView/slayHouse_list.html'
+
+    def get_queryset(self):
+        return SlayHouse.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class SlaughterListView(ListView):
+    model = Slaughter
+    template_name = 'farmdb/listView/slaughter_list.html'
+
+    def get_queryset(self):
+        return Slaughter.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherDestListView(ListView):
+    model = OtherDest
+    template_name = 'farmdb/listView/otherDest_list.html'
+
+    def get_queryset(self):
+        return OtherDest.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherReasonListView(ListView):
+    model = OtherReason
+    template_name = 'farmdb/listView/otherReason_list.html'
+
+    def get_queryset(self):
+        return OtherReason.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherRemoveListView(ListView):
+    model = OtherRemove
+    template_name = 'farmdb/listView/otherRemove_list.html'
+
+    def get_queryset(self):
+        return OtherRemove.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedTypeListView(ListView):
+    model = FeedType
+    template_name = 'farmdb/listView/feedType_list.html'
+
+    def get_queryset(self):
+        return FeedType.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedSubtypeListView(ListView):
+    model = FeedSubtype
+    template_name = 'farmdb/listView/feedSubtype_list.html'
+
+    def get_queryset(self):
+        return FeedSubtype.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedUnitListView(ListView):
+    model = FeedUnit
+    template_name = 'farmdb/listView/feedUnit_list.html'
+
+    def get_queryset(self):
+        return FeedUnit.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class VendorListView(ListView):
+    model = Vendor
+    template_name = 'farmdb/listView/vendor_list.html'
+
+    def get_queryset(self):
+        return Vendor.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedPurchaseListView(ListView):
+    model = FeedPurchase
+    template_name = 'farmdb/listView/feedPurchase_list.html'
+
+    def get_queryset(self):
+        return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
+

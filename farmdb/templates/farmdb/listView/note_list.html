@@ -1,0 +1,33 @@
+{% extends "farmdb/base.html" %}
+{% load tz %}
+
+{% block body %}
+<h1><center><strong>Note</strong></center></h1>
+{% if note_list %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Farm</th>
+            <th>Note</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for nt in note_list %}
+        <tr>
+{#            <td>{{phoneCall.question_id}}</a></td>#}
+            <td>{{ nt.farm }}</td>
+            <td>{{ nt.note_date }}</td>
+            <td>{{ nt.note }}</td>
+            <td>{{ nt.filename }}</td>
+            <td>{{ nt.created_by }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+{% endif %}
+{% endblock %}
+
