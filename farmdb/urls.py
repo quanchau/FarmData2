@@ -44,6 +44,7 @@ urlpatterns = [
     # UpdateViews
 
     # DeleteViews
+    url(r'^delete/AnimalGroup/(?P<pk>\d+)/$', views.AnimalGroupDelete.as_view(), name='AnimalGroupDelete'),
 
     # url(r'^$/', views.index, name='index'),
     # url(r'^$/', views.login_user, name='user_login'),

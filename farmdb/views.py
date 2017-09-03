@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DeleteView, DetailView
 from django.utils.decorators import method_decorator
+from django.urls import reverse_lazy
 
 from .forms import *
 from .models import *
@@ -441,6 +442,14 @@ class FeedPurchaseCreateView(CreateView):
         form.instance.farm = self.request.user.farmer.farm
         form.instance.active = True
         return super(FeedPurchaseCreateView, self).form_valid(form)
+
+# DeleteView
+
+class AnimalGroupDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = AnimalGroup
+    success_url = reverse_lazy('farmdb:AnimalGroupList')
+
 
 # ListViews
 
