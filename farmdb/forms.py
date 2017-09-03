@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-class Create_Farmer_Form(forms.ModelForm):
+class FarmerForm(forms.ModelForm):
 
     password = forms.CharField(widget=forms.PasswordInput)
 
@@ -12,8 +12,8 @@ class Create_Farmer_Form(forms.ModelForm):
         model = User
         fields = ['username','password','email']
 
-class Animal_Group_Form(forms.ModelForm):
+class AnimalGroupForm(forms.ModelForm):
 
     class Meta:
-        model = Breed
+        model = AnimalGroup
         fields = ['farm', 'animalGroup','active']
