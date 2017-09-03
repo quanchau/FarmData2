@@ -2,7 +2,7 @@
 {% load tz %}
 
 {% block body %}
-<h1><center><strong>SubGroup</strong></center></h1>
+<h1><center><strong>Animal Sub Group</strong></center></h1>
 {% if subgroup_list %}
 <div class="table-responsive">
     <table class="table">
@@ -17,7 +17,7 @@
         <tr>
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sg.farm }}</td>
-            <td>{{ sg.subGroup }}</td>
+            <td>{{ sg.animalSubGroup }}</td>
             <td>{{ sg.animalGroup }}</td>
         </tr>
         {% endfor %}

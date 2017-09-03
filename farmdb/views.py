@@ -465,12 +465,12 @@ class BreedListView(ListView):
 
 @method_decorator(login_required, name='dispatch')
 class SubGroupListView(ListView):
-    model = SubGroup
-    template_name = 'farmdb/listView/subGroup_list.html'
+    model = AnimalSubGroup
+    template_name = 'farmdb/listView/animalSubGroup_list.html'
 
 
     def get_queryset(self):
-        return SubGroup.objects.filter(frm=self.request.user.farmer.farm)
+        return AnimalSubGroup.objects.filter(frm=self.request.user.farmer.farm)
 
 @method_decorator(login_required, name='dispatch')
 class OriginListView(ListView):
