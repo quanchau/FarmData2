@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="Django default">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="auth_group"/>
+    <table id="4" parent="2" name="auth_group_permissions"/>
+    <table id="5" parent="2" name="auth_permission"/>
+    <table id="6" parent="2" name="auth_user"/>
+    <table id="7" parent="2" name="auth_user_groups"/>
+    <table id="8" parent="2" name="auth_user_user_permissions"/>
+    <table id="9" parent="2" name="django_admin_log"/>
+    <table id="10" parent="2" name="django_content_type"/>
+    <table id="11" parent="2" name="django_migrations"/>
+    <table id="12" parent="2" name="django_session"/>
+    <table id="13" parent="2" name="farmdb_animal"/>
+    <table id="14" parent="2" name="farmdb_animalgroup"/>
+    <table id="15" parent="2" name="farmdb_breed"/>
+    <table id="16" parent="2" name="farmdb_destination"/>
+    <table id="17" parent="2" name="farmdb_egglog"/>
+    <table id="18" parent="2" name="farmdb_farm"/>
+    <table id="19" parent="2" name="farmdb_farmer"/>
+    <table id="20" parent="2" name="farmdb_feedpurchase"/>
+    <table id="21" parent="2" name="farmdb_feedtype"/>
+    <table id="22" parent="2" name="farmdb_feedunit"/>
+    <table id="23" parent="2" name="farmdb_forage"/>
+    <table id="24" parent="2" name="farmdb_medication"/>
+    <table id="25" parent="2" name="farmdb_medsgiven"/>
+    <table id="26" parent="2" name="farmdb_note"/>
+    <table id="27" parent="2" name="farmdb_origin"/>
+    <table id="28" parent="2" name="farmdb_otherdest"/>
+    <table id="29" parent="2" name="farmdb_otherreason"/>
+    <table id="30" parent="2" name="farmdb_otherremove"/>
+    <table id="31" parent="2" name="farmdb_paddock"/>
+    <table id="32" parent="2" name="farmdb_reason"/>
+    <table id="33" parent="2" name="farmdb_sale"/>
+    <table id="34" parent="2" name="farmdb_sheepcare"/>
+    <table id="35" parent="2" name="farmdb_slaughter"/>
+    <table id="36" parent="2" name="farmdb_slayhouse"/>
+    <table id="37" parent="2" name="farmdb_subgroup"/>
+    <table id="38" parent="2" name="farmdb_task"/>
+    <table id="39" parent="2" name="farmdb_taskmaster"/>
+    <table id="40" parent="2" name="farmdb_taskrecurring"/>
+    <table id="41" parent="2" name="farmdb_vendor"/>
+    <table id="42" parent="2" name="farmdb_vet"/>
+    <table id="43" parent="2" name="farmdb_wormer"/>
+    <table id="44" parent="2" name="sqlite_master"/>
+    <table id="45" parent="2" name="sqlite_sequence"/>
+    <column id="46" parent="3" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="3" name="name">
+      <Position>1</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="3" name="sqlite_autoindex_auth_group_1">
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="3">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="50" parent="3">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_auth_group_1</UnderlyingIndexName>
+    </key>
+    <column id="51" parent="4" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="4" name="group_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="4" name="permission_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="4" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+      <ColNames>group_id
+permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="55" parent="4" name="auth_group_permissions_group_id_b120cbf9">
+      <ColNames>group_id</ColNames>
+    </index>
+    <index id="56" parent="4" name="auth_group_permissions_permission_id_84c5c92e">
+      <ColNames>permission_id</ColNames>
+    </index>
+    <key id="57" parent="4">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="4">
+      <ColNames>group_id</ColNames>
+      <RefTableName>auth_group</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="4">
+      <ColNames>permission_id</ColNames>
+      <RefTableName>auth_permission</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="60" parent="5" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="5" name="content_type_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="5" name="codename">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="5" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="64" parent="5" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+      <ColNames>content_type_id
+codename</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="65" parent="5" name="auth_permission_content_type_id_2f476e4b">
+      <ColNames>content_type_id</ColNames>
+    </index>
+    <key id="66" parent="5">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="67" parent="5">
+      <ColNames>content_type_id</ColNames>
+      <RefTableName>django_content_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="68" parent="6" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="69" parent="6" name="password">
+      <Position>1</Position>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="6" name="last_login">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="71" parent="6" name="is_superuser">
+      <Position>3</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="6" name="first_name">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="6" name="last_name">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="6" name="email">
+      <Position>6</Position>
+      <DataType>varchar(254)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="6" name="is_staff">
+      <Position>7</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="6" name="is_active">
+      <Position>8</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="6" name="date_joined">
+      <Position>9</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="6" name="username">
+      <Position>10</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="79" parent="6" name="sqlite_autoindex_auth_user_1">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="80" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="81" parent="6">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_auth_user_1</UnderlyingIndexName>
+    </key>
+    <column id="82" parent="7" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="83" parent="7" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="7" name="group_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="85" parent="7" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+      <ColNames>user_id
+group_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="86" parent="7" name="auth_user_groups_user_id_6a12ed8b">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="87" parent="7" name="auth_user_groups_group_id_97559544">
+      <ColNames>group_id</ColNames>
+    </index>
+    <key id="88" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="7">
+      <ColNames>user_id</ColNames>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="90" parent="7">
+      <ColNames>group_id</ColNames>
+      <RefTableName>auth_group</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="91" parent="8" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="92" parent="8" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="93" parent="8" name="permission_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="94" parent="8" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+      <ColNames>user_id
+permission_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="95" parent="8" name="auth_user_user_permissions_user_id_a95ead1b">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="96" parent="8" name="auth_user_user_permissions_permission_id_1fbb5f2c">
+      <ColNames>permission_id</ColNames>
+    </index>
+    <key id="97" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="98" parent="8">
+      <ColNames>user_id</ColNames>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="99" parent="8">
+      <ColNames>permission_id</ColNames>
+      <RefTableName>auth_permission</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="100" parent="9" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="101" parent="9" name="object_id">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="102" parent="9" name="object_repr">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="9" name="action_flag">
+      <Position>3</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="9" name="change_message">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="9" name="content_type_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="106" parent="9" name="user_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="107" parent="9" name="action_time">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="108" parent="9" name="django_admin_log_content_type_id_c4bce8eb">
+      <ColNames>content_type_id</ColNames>
+    </index>
+    <index id="109" parent="9" name="django_admin_log_user_id_c564eba6">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="110" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="111" parent="9">
+      <ColNames>content_type_id</ColNames>
+      <RefTableName>django_content_type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="112" parent="9">
+      <ColNames>user_id</ColNames>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="113" parent="10" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="114" parent="10" name="app_label">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="10" name="model">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="116" parent="10" name="django_content_type_app_label_model_76bd3d3b_uniq">
+      <ColNames>app_label
+model</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="117" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="118" parent="11" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="119" parent="11" name="app">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="11" name="applied">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="122" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="123" parent="12" name="session_key">
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="124" parent="12" name="session_data">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="125" parent="12" name="expire_date">
+      <Position>2</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="126" parent="12" name="sqlite_autoindex_django_session_1">
+      <ColNames>session_key</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="127" parent="12" name="django_session_expire_date_a5c62663">
+      <ColNames>expire_date</ColNames>
+    </index>
+    <key id="128" parent="12">
+      <ColNames>session_key</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_django_session_1</UnderlyingIndexName>
+    </key>
+    <column id="129" parent="13" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="130" parent="13" name="animal_id">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="13" name="gender">
+      <Position>2</Position>
+      <DataType>varchar(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="13" name="birth_date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="13" name="mother">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="13" name="father">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="13" name="name">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="13" name="markings">
+      <Position>7</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="137" parent="13" name="filename">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="138" parent="13" name="alive">
+      <Position>9</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="13" name="comments">
+      <Position>10</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="13" name="animalGroup_id">
+      <Position>11</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="141" parent="13" name="breed_id">
+      <Position>12</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="142" parent="13" name="farm_id">
+      <Position>13</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="13" name="origin_id">
+      <Position>14</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="13" name="sub_group_id">
+      <Position>15</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="145" parent="13" name="sqlite_autoindex_farmdb_animal_1">
+      <ColNames>animal_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="146" parent="13" name="farmdb_animal_animalGroup_id_9e25367f">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="147" parent="13" name="farmdb_animal_breed_id_1b7effa9">
+      <ColNames>breed_id</ColNames>
+    </index>
+    <index id="148" parent="13" name="farmdb_animal_farm_id_bd79d956">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="149" parent="13" name="farmdb_animal_origin_id_a304a8e7">
+      <ColNames>origin_id</ColNames>
+    </index>
+    <index id="150" parent="13" name="farmdb_animal_sub_group_id_eeffec22">
+      <ColNames>sub_group_id</ColNames>
+    </index>
+    <key id="151" parent="13">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="152" parent="13">
+      <ColNames>animal_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_farmdb_animal_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="153" parent="13">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="154" parent="13">
+      <ColNames>breed_id</ColNames>
+      <RefTableName>farmdb_breed</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="155" parent="13">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="156" parent="13">
+      <ColNames>origin_id</ColNames>
+      <RefTableName>farmdb_origin</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="157" parent="13">
+      <ColNames>sub_group_id</ColNames>
+      <RefTableName>farmdb_subgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="158" parent="14" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="159" parent="14" name="animalGroup">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="160" parent="14" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="161" parent="14" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="162" parent="14" name="farmdb_animalgroup_farm_id_23a9d1cb">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="163" parent="14">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="164" parent="14">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="165" parent="15" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="166" parent="15" name="breed">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="167" parent="15" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="168" parent="15" name="animalGroup_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="169" parent="15" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="170" parent="15" name="farmdb_breed_animalGroup_id_breed_d0405ee1_uniq">
+      <ColNames>animalGroup_id
+breed</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="171" parent="15" name="farmdb_breed_animalGroup_id_ce2a8c7a">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="172" parent="15" name="farmdb_breed_farm_id_d6c174c6">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="173" parent="15">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="174" parent="15">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="175" parent="15">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="176" parent="16" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="177" parent="16" name="destination">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="178" parent="16" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="179" parent="16" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="180" parent="16" name="farmdb_destination_farm_id_2530057b">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="181" parent="16">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="182" parent="16">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="183" parent="17" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="184" parent="17" name="collection_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="185" parent="17" name="number">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="186" parent="17" name="comments">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="187" parent="17" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="188" parent="17" name="farmdb_egglog_farm_id_d02e4879">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="189" parent="17">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="190" parent="17">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="191" parent="18" name="date_of_creation">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="192" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="193" parent="18" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="194" parent="18" name="address">
+      <Position>3</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="195" parent="18" name="active">
+      <Position>4</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="196" parent="18">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="197" parent="19" name="reg_date">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="198" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="199" parent="19" name="gender">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="200" parent="19" name="active">
+      <Position>3</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="201" parent="19" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="202" parent="19" name="user_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <index id="203" parent="19" name="sqlite_autoindex_farmdb_farmer_1">
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="204" parent="19" name="farmdb_farmer_farm_id_420eee03">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="205" parent="19">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="206" parent="19">
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_farmdb_farmer_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="207" parent="19">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="208" parent="19">
+      <ColNames>user_id</ColNames>
+      <RefTableName>auth_user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="209" parent="20" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="210" parent="20" name="purchase_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="211" parent="20" name="price_unit">
+      <Position>2</Position>
+      <DataType>decimal|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="212" parent="20" name="weight_unit">
+      <Position>3</Position>
+      <DataType>decimal|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="213" parent="20" name="animalGroup_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="214" parent="20" name="farm_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="215" parent="20" name="type_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="216" parent="20" name="units_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="217" parent="20" name="vendor_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="218" parent="20" name="farmdb_feedpurchase_animalGroup_id_b5d4d001">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="219" parent="20" name="farmdb_feedpurchase_farm_id_ec46cec6">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="220" parent="20" name="farmdb_feedpurchase_type_id_f7405c8f">
+      <ColNames>type_id</ColNames>
+    </index>
+    <index id="221" parent="20" name="farmdb_feedpurchase_units_id_af09301c">
+      <ColNames>units_id</ColNames>
+    </index>
+    <index id="222" parent="20" name="farmdb_feedpurchase_vendor_id_d514473d">
+      <ColNames>vendor_id</ColNames>
+    </index>
+    <key id="223" parent="20">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="224" parent="20">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="225" parent="20">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="226" parent="20">
+      <ColNames>type_id</ColNames>
+      <RefTableName>farmdb_feedtype</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="227" parent="20">
+      <ColNames>units_id</ColNames>
+      <RefTableName>farmdb_feedunit</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="228" parent="20">
+      <ColNames>vendor_id</ColNames>
+      <RefTableName>farmdb_vendor</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="229" parent="21" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="230" parent="21" name="type">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="231" parent="21" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="232" parent="21" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="233" parent="21" name="farmdb_feedtype_farm_id_37bf829f">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="234" parent="21">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="235" parent="21">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="236" parent="22" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="237" parent="22" name="unit">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="238" parent="22" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="239" parent="22" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="240" parent="22" name="farmdb_feedunit_farm_id_6424f852">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="241" parent="22">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="242" parent="22">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="243" parent="23" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="244" parent="23" name="forage">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="245" parent="23" name="density">
+      <Position>2</Position>
+      <DataType>real|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="246" parent="23" name="active">
+      <Position>3</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="247" parent="23" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="248" parent="23" name="farmdb_forage_farm_id_43ad28e5">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="249" parent="23">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="250" parent="23">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="251" parent="24" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="252" parent="24" name="medication">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="253" parent="24" name="dosage">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="254" parent="24" name="active">
+      <Position>3</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="255" parent="24" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="256" parent="24" name="farmdb_medication_farm_id_788b1a55">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="257" parent="24">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="258" parent="24">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="259" parent="25" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="260" parent="25" name="farm_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="261" parent="25" name="medication_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="262" parent="25" name="vet_id_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="263" parent="25" name="farmdb_medsgiven_farm_id_f33b6029">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="264" parent="25" name="farmdb_medsgiven_medication_id_6572d644">
+      <ColNames>medication_id</ColNames>
+    </index>
+    <index id="265" parent="25" name="farmdb_medsgiven_vet_id_id_c2763fe9">
+      <ColNames>vet_id_id</ColNames>
+    </index>
+    <key id="266" parent="25">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="267" parent="25">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="268" parent="25">
+      <ColNames>medication_id</ColNames>
+      <RefTableName>farmdb_medication</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="269" parent="25">
+      <ColNames>vet_id_id</ColNames>
+      <RefTableName>farmdb_vet</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="270" parent="26" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="271" parent="26" name="note_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="272" parent="26" name="note">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="273" parent="26" name="filename">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="274" parent="26" name="created_by">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="275" parent="26" name="farm_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="276" parent="26" name="farmdb_note_farm_id_4c4113fe">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="277" parent="26">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="278" parent="26">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="279" parent="27" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="280" parent="27" name="origin">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="281" parent="27" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="282" parent="27" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="283" parent="27" name="farmdb_origin_farm_id_92d0d802">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="284" parent="27">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="285" parent="27">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="286" parent="28" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="287" parent="28" name="reason">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="288" parent="28" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="289" parent="28" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="290" parent="28" name="farmdb_otherdest_farm_id_772d04d7">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="291" parent="28">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="292" parent="28">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="293" parent="29" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="294" parent="29" name="reason">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="295" parent="29" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="296" parent="29" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="297" parent="29" name="farmdb_otherreason_farm_id_73f4c9ae">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="298" parent="29">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="299" parent="29">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="300" parent="30" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="301" parent="30" name="remove_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="302" parent="30" name="weight">
+      <Position>2</Position>
+      <DataType>smallint unsigned|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="303" parent="30" name="comments">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="304" parent="30" name="animal_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="305" parent="30" name="destination_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="306" parent="30" name="farm_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="307" parent="30" name="reason_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="308" parent="30" name="sqlite_autoindex_farmdb_otherremove_1">
+      <ColNames>animal_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="309" parent="30" name="farmdb_otherremove_destination_id_0aa63ea9">
+      <ColNames>destination_id</ColNames>
+    </index>
+    <index id="310" parent="30" name="farmdb_otherremove_farm_id_375ba685">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="311" parent="30" name="farmdb_otherremove_reason_id_832fbaaa">
+      <ColNames>reason_id</ColNames>
+    </index>
+    <key id="312" parent="30">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="313" parent="30">
+      <ColNames>animal_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_farmdb_otherremove_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="314" parent="30">
+      <ColNames>animal_id</ColNames>
+      <RefTableName>farmdb_animal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="315" parent="30">
+      <ColNames>destination_id</ColNames>
+      <RefTableName>farmdb_otherdest</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="316" parent="30">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="317" parent="30">
+      <ColNames>reason_id</ColNames>
+      <RefTableName>farmdb_otherreason</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="318" parent="31" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="319" parent="31" name="size">
+      <Position>1</Position>
+      <DataType>real|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="320" parent="31" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="321" parent="31" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="322" parent="31" name="forage_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="323" parent="31" name="farmdb_paddock_farm_id_bff389ac">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="324" parent="31" name="farmdb_paddock_forage_id_f1f8df52">
+      <ColNames>forage_id</ColNames>
+    </index>
+    <key id="325" parent="31">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="326" parent="31">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="327" parent="31">
+      <ColNames>forage_id</ColNames>
+      <RefTableName>farmdb_forage</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="328" parent="32" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="329" parent="32" name="reason">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="330" parent="32" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="331" parent="32" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="332" parent="32" name="farmdb_reason_farm_id_36d00ffa">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="333" parent="32">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="334" parent="32">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="335" parent="33" name="sale_date">
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="336" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="337" parent="33" name="sale_tag">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="338" parent="33" name="weight">
+      <Position>3</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="339" parent="33" name="estimated">
+      <Position>4</Position>
+      <DataType>varchar(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="340" parent="33" name="price_lb">
+      <Position>5</Position>
+      <DataType>decimal|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="341" parent="33" name="fees">
+      <Position>6</Position>
+      <DataType>decimal|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="342" parent="33" name="comments">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="343" parent="33" name="animal_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="344" parent="33" name="destination_id">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="345" parent="33" name="farm_id">
+      <Position>10</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="346" parent="33" name="sqlite_autoindex_farmdb_sale_1">
+      <ColNames>animal_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="347" parent="33" name="farmdb_sale_destination_id_2c0cf6ab">
+      <ColNames>destination_id</ColNames>
+    </index>
+    <index id="348" parent="33" name="farmdb_sale_farm_id_912189c5">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="349" parent="33">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="350" parent="33">
+      <ColNames>animal_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_farmdb_sale_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="351" parent="33">
+      <ColNames>animal_id</ColNames>
+      <RefTableName>farmdb_animal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="352" parent="33">
+      <ColNames>destination_id</ColNames>
+      <RefTableName>farmdb_destination</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="353" parent="33">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="354" parent="34" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="355" parent="34" name="care_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="356" parent="34" name="eye">
+      <Position>2</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="357" parent="34" name="body">
+      <Position>3</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="358" parent="34" name="tail">
+      <Position>4</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="359" parent="34" name="nose">
+      <Position>5</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="360" parent="34" name="coat">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="361" parent="34" name="jaw">
+      <Position>7</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="362" parent="34" name="wormer">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="363" parent="34" name="hoof">
+      <Position>9</Position>
+      <DataType>varchar(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="364" parent="34" name="weight">
+      <Position>10</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="365" parent="34" name="estimated">
+      <Position>11</Position>
+      <DataType>varchar(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="366" parent="34" name="comments">
+      <Position>12</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="367" parent="34" name="animal_id">
+      <Position>13</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="368" parent="34" name="farm_id">
+      <Position>14</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="369" parent="34" name="farmdb_sheepcare_animal_id_adc36c8f">
+      <ColNames>animal_id</ColNames>
+    </index>
+    <index id="370" parent="34" name="farmdb_sheepcare_farm_id_6a09697d">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="371" parent="34">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="372" parent="34">
+      <ColNames>animal_id</ColNames>
+      <RefTableName>farmdb_animal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="373" parent="34">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="374" parent="35" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="375" parent="35" name="sale_tag">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="376" parent="35" name="hauler">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="377" parent="35" name="haul_equip">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="378" parent="35" name="slay_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="379" parent="35" name="estimated">
+      <Position>5</Position>
+      <DataType>varchar(9)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="380" parent="35" name="fees">
+      <Position>6</Position>
+      <DataType>decimal|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="381" parent="35" name="comments">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="382" parent="35" name="animal_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="383" parent="35" name="farm_id">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="384" parent="35" name="slay_house_id">
+      <Position>10</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="385" parent="35" name="sqlite_autoindex_farmdb_slaughter_1">
+      <ColNames>animal_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="386" parent="35" name="farmdb_slaughter_farm_id_a292fe91">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="387" parent="35" name="farmdb_slaughter_slay_house_id_3f190d97">
+      <ColNames>slay_house_id</ColNames>
+    </index>
+    <key id="388" parent="35">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="389" parent="35">
+      <ColNames>animal_id</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_farmdb_slaughter_1</UnderlyingIndexName>
+    </key>
+    <foreign-key id="390" parent="35">
+      <ColNames>animal_id</ColNames>
+      <RefTableName>farmdb_animal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="391" parent="35">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="392" parent="35">
+      <ColNames>slay_house_id</ColNames>
+      <RefTableName>farmdb_slayhouse</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="393" parent="36" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="394" parent="36" name="slay_house">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="395" parent="36" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="396" parent="36" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="397" parent="36" name="farmdb_slayhouse_farm_id_3d553a0e">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="398" parent="36">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="399" parent="36">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="400" parent="37" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="401" parent="37" name="subGroup">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="402" parent="37" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="403" parent="37" name="animalGroup_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="404" parent="37" name="farm_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="405" parent="37" name="farmdb_subgroup_farm_id_animalGroup_id_subGroup_f22c3567_uniq">
+      <ColNames>farm_id
+animalGroup_id
+subGroup</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="406" parent="37" name="farmdb_subgroup_animalGroup_id_d79ba30f">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="407" parent="37" name="farmdb_subgroup_farm_id_56a7f376">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="408" parent="37">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="409" parent="37">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="410" parent="37">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="411" parent="38" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="412" parent="38" name="task">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="413" parent="38" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="414" parent="38" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="415" parent="38" name="farmdb_task_farm_id_4d6b2968">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="416" parent="38">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="417" parent="38">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="418" parent="39" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="419" parent="39" name="comments">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="420" parent="39" name="workers">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="421" parent="39" name="minutes">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="422" parent="39" name="complete">
+      <Position>4</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="423" parent="39" name="animalGroup_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="424" parent="39" name="farm_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="425" parent="39" name="sub_group_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="426" parent="39" name="task_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="427" parent="39" name="farmdb_taskmaster_animalGroup_id_e047b37e">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="428" parent="39" name="farmdb_taskmaster_farm_id_cffbbaf9">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="429" parent="39" name="farmdb_taskmaster_sub_group_id_a655795f">
+      <ColNames>sub_group_id</ColNames>
+    </index>
+    <index id="430" parent="39" name="farmdb_taskmaster_task_id_e2b34f25">
+      <ColNames>task_id</ColNames>
+    </index>
+    <key id="431" parent="39">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="432" parent="39">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="433" parent="39">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="434" parent="39">
+      <ColNames>sub_group_id</ColNames>
+      <RefTableName>farmdb_subgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="435" parent="39">
+      <ColNames>task_id</ColNames>
+      <RefTableName>farmdb_task</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="436" parent="40" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="437" parent="40" name="start_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="438" parent="40" name="comments">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="439" parent="40" name="workers">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="440" parent="40" name="minutes">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="441" parent="40" name="recur">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="442" parent="40" name="animalGroup_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="443" parent="40" name="farm_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="444" parent="40" name="sub_group_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="445" parent="40" name="task_id">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="446" parent="40" name="farmdb_taskrecurring_animalGroup_id_4a2ff66e">
+      <ColNames>animalGroup_id</ColNames>
+    </index>
+    <index id="447" parent="40" name="farmdb_taskrecurring_farm_id_778930ea">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="448" parent="40" name="farmdb_taskrecurring_sub_group_id_2dccea95">
+      <ColNames>sub_group_id</ColNames>
+    </index>
+    <index id="449" parent="40" name="farmdb_taskrecurring_task_id_8cb05bca">
+      <ColNames>task_id</ColNames>
+    </index>
+    <key id="450" parent="40">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="451" parent="40">
+      <ColNames>animalGroup_id</ColNames>
+      <RefTableName>farmdb_animalgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="452" parent="40">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="453" parent="40">
+      <ColNames>sub_group_id</ColNames>
+      <RefTableName>farmdb_subgroup</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="454" parent="40">
+      <ColNames>task_id</ColNames>
+      <RefTableName>farmdb_task</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="455" parent="41" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="456" parent="41" name="vendor">
+      <Position>1</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="457" parent="41" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="458" parent="41" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="459" parent="41" name="farmdb_vendor_farm_id_84108038">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="460" parent="41">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="461" parent="41">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="462" parent="42" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="463" parent="42" name="care_date">
+      <Position>1</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="464" parent="42" name="symptoms">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="465" parent="42" name="temperature">
+      <Position>3</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="466" parent="42" name="care">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="467" parent="42" name="weight">
+      <Position>5</Position>
+      <DataType>smallint|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="468" parent="42" name="vet">
+      <Position>6</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="469" parent="42" name="contact">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="470" parent="42" name="assistants">
+      <Position>8</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="471" parent="42" name="comments">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="472" parent="42" name="animal_id_id">
+      <Position>10</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="473" parent="42" name="farm_id">
+      <Position>11</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="474" parent="42" name="reason_id">
+      <Position>12</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="475" parent="42" name="farmdb_vet_animal_id_id_33739d14">
+      <ColNames>animal_id_id</ColNames>
+    </index>
+    <index id="476" parent="42" name="farmdb_vet_farm_id_d0ffae90">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <index id="477" parent="42" name="farmdb_vet_reason_id_82b980f1">
+      <ColNames>reason_id</ColNames>
+    </index>
+    <key id="478" parent="42">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="479" parent="42">
+      <ColNames>animal_id_id</ColNames>
+      <RefTableName>farmdb_animal</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="480" parent="42">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="481" parent="42">
+      <ColNames>reason_id</ColNames>
+      <RefTableName>farmdb_reason</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="482" parent="43" name="id">
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="483" parent="43" name="wormer">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="484" parent="43" name="active">
+      <Position>2</Position>
+      <DataType>bool|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="485" parent="43" name="farm_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="486" parent="43" name="farmdb_wormer_farm_id_6248846a">
+      <ColNames>farm_id</ColNames>
+    </index>
+    <key id="487" parent="43">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="488" parent="43">
+      <ColNames>farm_id</ColNames>
+      <RefTableName>farmdb_farm</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="489" parent="44" name="type">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="490" parent="44" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="491" parent="44" name="tbl_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="492" parent="44" name="rootpage">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+    </column>
+    <column id="493" parent="44" name="sql">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="494" parent="45" name="name">
+      <DataType>|0</DataType>
+    </column>
+    <column id="495" parent="45" name="seq">
+      <Position>1</Position>
+      <DataType>|0</DataType>
+    </column>
+  </database-model>
+</dataSource>
