@@ -47,21 +47,21 @@ class BreedAdmin(admin.ModelAdmin):
 class AnimalSubGroup(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
     animalSubGroup = models.CharField(max_length=50)
-    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE)
+    animalGroup = models.ForeignKey(AnimalGroup, on_delete=models.CASCADE,verbose_name='Animal Group')
     active = models.BooleanField(default=True)
 
     class Meta:
-        unique_together = ('farm', 'animalGroup', 'subGroup')
+        unique_together = ('farm', 'animalGroup', 'animalSubGroup')
 
     def __str__(self):
         return self.animalSubGroup
 
 
 class SubGroupAdmin(admin.ModelAdmin):
-    list_display = ('farm', 'subGroup', 'active', 'animalGroup')
-    search_fields = ('farm', 'subGroup')
+    list_display = ('farm', 'animalSubGroup', 'active', 'animalGroup')
+    search_fields = ('farm', 'animalSubGroup')
     list_filter = ('active',)
-    ordering = ('farm', 'subGroup')
+    ordering = ('farm', 'animalSubGroup')
 
 
 class Origin(models.Model):

@@ -1,0 +1,8 @@
+{% extends 'farmdb/base.html' %}
+
+{% block body %}
+  <h1 class="title">Create Vendor</h1>
+    <form method="post" action="{% url 'farmdb:VendorCreate' %}" enctype="multipart/form-data">
+    {% include 'farmdb/form_template.html' %}
+    </form>
+{% endblock %}

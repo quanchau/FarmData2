@@ -75,7 +75,7 @@ class AnimalGroupCreateView(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class BreedCreateView(CreateView):
-    template_name = "farmdb/createView/create.html"
+    template_name = "farmdb/createView/create_breed.html"
     model = Breed
     fields = ('breed', 'animalGroup',)
     success_url = '/'
@@ -233,7 +233,7 @@ class SheepCareCreateView(CreateView):
 
 @method_decorator(login_required, name='dispatch')
 class ForageCreateView(CreateView):
-    template_name = "farmdb/createView/create_Forage.html"
+    template_name = "farmdb/createView/create_forage.html"
     model = Forage
     fields = ('forage', 'density')
     success_url = '/'

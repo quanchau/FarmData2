@@ -11,7 +11,7 @@ urlpatterns = [
     # CreateViews
     url(r'^create/AnimalGroup$', views.AnimalGroupCreateView.as_view(), name="AnimalGroupCreate"),
     url(r'^create/Breed$', views.BreedCreateView.as_view(), name="BreedCreate"),
-    url(r'^create/AnimalSubGroup$', views.SubGroupCreateView.as_view(), name="AnimalSubGroupCreate"),
+    url(r'^create/AnimalSubGroup$', views.AnimalSubGroupCreateView.as_view(), name="AnimalSubGroupCreate"),
     url(r'^create/Origin$', views.OriginCreateView.as_view(), name="OriginCreate"),
     url(r'^create/Animal$', views.AnimalCreateView.as_view(), name="AnimalCreate"),
     url(r'^create/Reason$', views.ReasonCreateView.as_view(), name="ReasonCreate"),
