@@ -60,7 +60,7 @@ def create_farmer(request):
 
 @method_decorator(login_required, name='dispatch')
 class AnimalGroupCreateView(CreateView):
-    template_name = "farmdb/create_animalGroup.html"
+    template_name = "farmdb/createView/create_animalGroup.html"
     model = AnimalGroup
     fields = ('animalGroup',)
     success_url = '/'
@@ -77,7 +77,7 @@ class AnimalGroupCreateView(CreateView):
 @method_decorator(login_required, name='dispatch')
 class AnimalGroupListView(ListView):
     model = AnimalGroup
-    template_name = 'farmdb/animalGroup_list.html'
+    template_name = 'farmdb/listView/animalGroup_list.html'
 
 
     def get_queryset(self):
