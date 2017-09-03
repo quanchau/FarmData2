@@ -2,24 +2,22 @@
 {% load tz %}
 
 {% block body %}
-<h1><center><strong>EggLog</strong></center></h1>
-{% if egglog_list %}
+<h1><center><strong>Destination</strong></center></h1>
+{% if destination_list %}
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Egg Log</th>
+            <th>Destination</th>
         </tr>
         </thead>
         <tbody>
-        {% for el in egglog_list %}
+        {% for ds in destination_list %}
         <tr>
 {#            <td>{{phoneCall.question_id}}</a></td>#}
-            <td>{{ el.farm }}</td>
-            <td>{{ el.collectionDate }}</td>
-            <td>{{ el.number }}</td>
-            <td>{{ el.comments }}</td>
+            <td>{{ ds.farm }}</td>
+            <td>{{ ds.destination }}</td>
         </tr>
         {% endfor %}
         </tbody>

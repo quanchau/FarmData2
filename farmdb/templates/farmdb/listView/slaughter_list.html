@@ -1,0 +1,39 @@
+{% extends "farmdb/base.html" %}
+{% load tz %}
+
+{% block body %}
+<h1><center><strong>Slaughter</strong></center></h1>
+{% if slaughter_list %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Farm</th>
+            <th>Slaughter</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sl in slaughter_list %}
+        <tr>
+{#            <td>{{phoneCall.question_id}}</a></td>#}
+            <td>{{ sl.farm }}</td>
+            <td>{{ sl.animal }}</td>
+            <td>{{ sl.saleTag }}</td>
+            <td>{{ sl.slayHouse }}</td>
+            <td>{{ sl.hauler }}</td>
+            <td>{{ sl.haulEquip }}</td>
+            <td>{{ sl.slayDate }}</td>
+            <td>{{ sl.weight }}</td>
+            <td>{{ sl.estimated }}</td>
+            <td>{{ sl.fees }}</td>
+            <td>{{ sl.comments }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+{% endif %}
+{% endblock %}
+
