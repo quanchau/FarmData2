@@ -641,3 +641,49 @@ class OtherRemoveListView(ListView):
 
     def get_queryset(self):
         return OtherRemove.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedTypeListView(ListView):
+    model = FeedType
+    template_name = 'farmdb/listView/feedType_list.html'
+
+    def get_queryset(self):
+        return FeedType.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedSubtypeListView(ListView):
+    model = FeedSubtype
+    template_name = 'farmdb/listView/feedSubtype_list.html'
+
+    def get_queryset(self):
+        return FeedSubtype.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedUnitListView(ListView):
+    model = FeedUnit
+    template_name = 'farmdb/listView/feedUnit_list.html'
+
+    def get_queryset(self):
+        return FeedUnit.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class VendorListView(ListView):
+    model = Vendor
+    template_name = 'farmdb/listView/vendor_list.html'
+
+    def get_queryset(self):
+        return Vendor.objects.filter(frm=self.request.user.farmer.farm)
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedPurchaseListView(ListView):
+    model = FeedPurchase
+    template_name = 'farmdb/listView/feedPurchase_list.html'
+
+    def get_queryset(self):
+        return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
+
