@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.views.generic import CreateView, ListView, DeleteView, DetailView
+from django.views.generic import CreateView, ListView, DeleteView, DetailView, UpdateView
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
 
@@ -445,131 +445,154 @@ class FeedPurchaseCreateView(CreateView):
 
 
 # DeleteView
-
+@method_decorator(login_required, name='dispatch')
 class AnimalGroupDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = AnimalGroup
     success_url = reverse_lazy('farmdb:AnimalGroupList')
 
+
+@method_decorator(login_required, name='dispatch')
 class BreedDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Breed
     success_url = reverse_lazy('farmdb:BreedList')
 
 
+@method_decorator(login_required, name='dispatch')
 class AnimalSubGroupDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = AnimalSubGroup
     success_url = reverse_lazy('farmdb:AnimalSubGroupList')
 
 
+@method_decorator(login_required, name='dispatch')
 class OriginDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Origin
     success_url = reverse_lazy('farmdb:OriginList')
 
 
+@method_decorator(login_required, name='dispatch')
 class AnimalDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Animal
     success_url = reverse_lazy('farmdb:AnimalList')
 
 
+@method_decorator(login_required, name='dispatch')
 class ReasonDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Reason
     success_url = reverse_lazy('farmdb:ReasonList')
 
 
+@method_decorator(login_required, name='dispatch')
 class VetDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Vet
     success_url = reverse_lazy('farmdb:VetList')
 
 
+@method_decorator(login_required, name='dispatch')
 class MedicationDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Medication
     success_url = reverse_lazy('farmdb:MedicationList')
 
 
+@method_decorator(login_required, name='dispatch')
 class MedsGivenDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = MedsGiven
     success_url = reverse_lazy('farmdb:MedsGivenList')
 
 
+@method_decorator(login_required, name='dispatch')
 class EggLogDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = EggLog
     success_url = reverse_lazy('farmdb:EggLogList')
 
 
+@method_decorator(login_required, name='dispatch')
 class WormerDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Wormer
     success_url = reverse_lazy('farmdb:WormerList')
 
+
+@method_decorator(login_required, name='dispatch')
 class DestinationDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Wormer
     success_url = reverse_lazy('farmdb:DestinationList')
 
 
+@method_decorator(login_required, name='dispatch')
 class SheepCareDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = SheepCare
     success_url = reverse_lazy('farmdb:SheepCareList')
 
 
+@method_decorator(login_required, name='dispatch')
 class ForageDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Forage
     success_url = reverse_lazy('farmdb:ForageList')
 
 
+@method_decorator(login_required, name='dispatch')
 class PaddockDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Paddock
     success_url = reverse_lazy('farmdb:PaddockList')
 
 
+@method_decorator(login_required, name='dispatch')
 class NoteDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Note
     success_url = reverse_lazy('farmdb:NoteList')
 
 
+@method_decorator(login_required, name='dispatch')
 class SaleDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Sale
     success_url = reverse_lazy('farmdb:SaleList')
 
 
+@method_decorator(login_required, name='dispatch')
 class SlayHouseDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = SlayHouse
     success_url = reverse_lazy('farmdb:SlayHouseList')
 
 
+@method_decorator(login_required, name='dispatch')
 class SlaughterDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Slaughter
     success_url = reverse_lazy('farmdb:SlaughterList')
 
 
+@method_decorator(login_required, name='dispatch')
 class OtherDestDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = OtherDest
     success_url = reverse_lazy('farmdb:OtherDestList')
 
 
+@method_decorator(login_required, name='dispatch')
 class OtherReasonDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = OtherReason
     success_url = reverse_lazy('farmdb:OtherReasonList')
 
 
+@method_decorator(login_required, name='dispatch')
 class OtherRemoveDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
 
@@ -577,30 +600,35 @@ class OtherRemoveDelete(DeleteView):
     success_url = reverse_lazy('farmdb:OtherRemoveList')
 
 
+@method_decorator(login_required, name='dispatch')
 class FeedTypeDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = FeedType
     success_url = reverse_lazy('farmdb:FeedTypeList')
 
 
+@method_decorator(login_required, name='dispatch')
 class FeedUnitDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = FeedUnit
     success_url = reverse_lazy('farmdb:FeedUnitList')
 
 
+@method_decorator(login_required, name='dispatch')
 class FeedSubtypeDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = FeedSubtype
     success_url = reverse_lazy('farmdb:FeedSubtypeList')
 
 
+@method_decorator(login_required, name='dispatch')
 class VendorDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = Vendor
     success_url = reverse_lazy('farmdb:VendorList')
 
 
+@method_decorator(login_required, name='dispatch')
 class FeedPurchaseDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = FeedPurchase
@@ -629,7 +657,7 @@ class BreedListView(ListView):
 
 
 @method_decorator(login_required, name='dispatch')
-class SubGroupListView(ListView):
+class AnimalSubGroupListView(ListView):
     model = AnimalSubGroup
     template_name = 'farmdb/listView/animalSubGroup_list.html'
 
@@ -851,3 +879,12 @@ class FeedPurchaseListView(ListView):
 
     def get_queryset(self):
         return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
+
+# UpdateView
+
+@method_decorator(login_required, name='dispatch')
+class OtherDestUpdateView(UpdateView):
+    template_name = "farmdb/createView/create_otherDest.html"
+    model = OtherDest
+    fields = ('dest',)
+    success_url = '/'

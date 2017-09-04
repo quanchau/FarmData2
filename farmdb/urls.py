@@ -70,6 +70,8 @@ urlpatterns = [
     # DetailViews
 
     # UpdateViews
+    url(r'^update/OtherDest/(?P<pk>\d+)/$', views.OtherDestUpdateView.as_view(), name='OtherDestUpdate'),
+
 
     # DeleteViews
     url(r'^delete/AnimalGroup/(?P<pk>\d+)/$', views.AnimalGroupDelete.as_view(), name='AnimalGroupDelete'),

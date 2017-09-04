@@ -277,7 +277,7 @@ class OtherDest(models.Model):
     active = models.BooleanField()
 
     def __str__(self):
-        return self.reason
+        return self.dest
 
 
 class OtherReason(models.Model):
