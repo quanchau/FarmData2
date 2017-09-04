@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Feed Subtype</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
             <td>{{ fs.farm }}</td>
             <td>{{ fs.type }}</td>
             <td>{{ fs.subtype }}</td>
+        <td> <a href="{% url 'farmdb:FeedSubtypeDelete' pk=fs.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>

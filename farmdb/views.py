@@ -121,8 +121,8 @@ class AnimalCreateView(CreateView):
     template_name = "farmdb/createView/create_animal.html"
     model = Animal
     fields = (
-    'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
-    'animalGroup', 'breed', 'subGroup', 'origin',)
+        'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
+        'animalGroup', 'breed', 'subGroup', 'origin',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -443,12 +443,168 @@ class FeedPurchaseCreateView(CreateView):
         form.instance.active = True
         return super(FeedPurchaseCreateView, self).form_valid(form)
 
+
 # DeleteView
 
 class AnimalGroupDelete(DeleteView):
     template_name = 'farmdb/delete_confirm.html'
     model = AnimalGroup
     success_url = reverse_lazy('farmdb:AnimalGroupList')
+
+class BreedDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Breed
+    success_url = reverse_lazy('farmdb:BreedList')
+
+
+class AnimalSubGroupDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = AnimalSubGroup
+    success_url = reverse_lazy('farmdb:AnimalSubGroupList')
+
+
+class OriginDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Origin
+    success_url = reverse_lazy('farmdb:OriginList')
+
+
+class AnimalDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Animal
+    success_url = reverse_lazy('farmdb:AnimalList')
+
+
+class ReasonDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Reason
+    success_url = reverse_lazy('farmdb:ReasonList')
+
+
+class VetDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Vet
+    success_url = reverse_lazy('farmdb:VetList')
+
+
+class MedicationDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Medication
+    success_url = reverse_lazy('farmdb:MedicationList')
+
+
+class MedsGivenDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = MedsGiven
+    success_url = reverse_lazy('farmdb:MedsGivenList')
+
+
+class EggLogDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = EggLog
+    success_url = reverse_lazy('farmdb:EggLogList')
+
+
+class WormerDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Wormer
+    success_url = reverse_lazy('farmdb:WormerList')
+
+class DestinationDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Wormer
+    success_url = reverse_lazy('farmdb:DestinationList')
+
+
+class SheepCareDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = SheepCare
+    success_url = reverse_lazy('farmdb:SheepCareList')
+
+
+class ForageDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Forage
+    success_url = reverse_lazy('farmdb:ForageList')
+
+
+class PaddockDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Paddock
+    success_url = reverse_lazy('farmdb:PaddockList')
+
+
+class NoteDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Note
+    success_url = reverse_lazy('farmdb:NoteList')
+
+
+class SaleDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Sale
+    success_url = reverse_lazy('farmdb:SaleList')
+
+
+class SlayHouseDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = SlayHouse
+    success_url = reverse_lazy('farmdb:SlayHouseList')
+
+
+class SlaughterDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Slaughter
+    success_url = reverse_lazy('farmdb:SlaughterList')
+
+
+class OtherDestDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = OtherDest
+    success_url = reverse_lazy('farmdb:OtherDestList')
+
+
+class OtherReasonDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = OtherReason
+    success_url = reverse_lazy('farmdb:OtherReasonList')
+
+
+class OtherRemoveDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+
+    model = OtherRemove
+    success_url = reverse_lazy('farmdb:OtherRemoveList')
+
+
+class FeedTypeDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = FeedType
+    success_url = reverse_lazy('farmdb:FeedTypeList')
+
+
+class FeedUnitDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = FeedUnit
+    success_url = reverse_lazy('farmdb:FeedUnitList')
+
+
+class FeedSubtypeDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = FeedSubtype
+    success_url = reverse_lazy('farmdb:FeedSubtypeList')
+
+
+class VendorDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = Vendor
+    success_url = reverse_lazy('farmdb:VendorList')
+
+
+class FeedPurchaseDelete(DeleteView):
+    template_name = 'farmdb/delete_confirm.html'
+    model = FeedPurchase
+    success_url = reverse_lazy('farmdb:FeedPurchaseList')
 
 
 # ListViews
@@ -695,4 +851,3 @@ class FeedPurchaseListView(ListView):
 
     def get_queryset(self):
         return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
-

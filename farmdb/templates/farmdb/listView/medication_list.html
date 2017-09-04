@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Medication</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
             <td>{{ md.farm }}</td>
             <td>{{ md.medication }}</td>
             <td>{{ md.dosage }}</td>
+        <td> <a href="{% url 'farmdb:MedicationDelete' pk=md.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>

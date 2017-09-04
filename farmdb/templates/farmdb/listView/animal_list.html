@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Animal</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +32,7 @@
             <td>{{ al.breed }}</td>
             <td>{{ al.animalSubGroup }}</td>
             <td>{{ al.origin }}</td>
+            <td> <a href="{% url 'farmdb:AnimalDelete' pk=al.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>

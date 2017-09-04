@@ -2,12 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e299ce93-bbb3-4b4d-8f45-a4fa880f7db1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/delete_confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FarmData2.iml" afterPath="$PROJECT_DIR$/.idea/FarmData2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/breed_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/breed_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medication_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medication_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html" afterPath="$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/urls.py" afterPath="$PROJECT_DIR$/farmdb/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/farmdb/views.py" afterPath="$PROJECT_DIR$/farmdb/views.py" />
     </list>
@@ -76,75 +96,101 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/farmdb/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="448" column="28" lean-forward="false" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_confirm.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/delete_confirm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/farmdb/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="animalGroup_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="feedPurchase_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="slayHouse_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vendor_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vet_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wormer_list.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="otherRemove_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paddock_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reason_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sale_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sheepCare_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="slaughter_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -182,6 +228,9 @@
       <find>context</find>
       <find>subgroup</find>
       <find>'subgroup'</find>
+      <find>Delete</find>
+      <find>Des</find>
+      <find>Destina</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -199,9 +248,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_reason.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_vet.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_medication.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_medsGiven.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_eggLog.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_wormer.html" />
@@ -221,35 +267,38 @@
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_feedSubType.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_vendor.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_feedPurchase.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html" />
         <option value="$PROJECT_DIR$/farmdb/models/animalData.py" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html" />
-        <option value="$PROJECT_DIR$/farmdb/urls.py" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/animalgroup_delete_confirm.html" />
-        <option value="$PROJECT_DIR$/farmdb/views.py" />
         <option value="$PROJECT_DIR$/farmdb/templates/farmdb/delete_confirm.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/breed_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/views.py" />
+        <option value="$PROJECT_DIR$/farmdb/urls.py" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medication_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html" />
+        <option value="$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html" />
       </list>
     </option>
   </component>
@@ -260,7 +309,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3001" />
+    <option name="x" value="-1" />
     <option name="y" value="836" />
     <option name="width" value="1922" />
     <option name="height" value="1085" />
@@ -328,6 +377,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="farmdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FarmData2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FarmData2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listView" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FarmData2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FarmData2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="farmdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,7 +673,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3001" y="836" width="1922" height="1085" extended-state="6" />
+    <frame x="-1" y="836" width="1922" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15421557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -733,83 +826,10 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/django/db/models/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/breed_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/medication_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/models/animalData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/createView/create_wormer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="59" lean-forward="false" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -819,170 +839,6 @@
         <state relative-caret-position="105">
           <caret line="5" column="45" lean-forward="true" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="43" column="17" lean-forward="false" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/farmdb/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="448" column="28" lean-forward="false" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#78#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -997,7 +853,251 @@
     <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/delete_confirm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/models/animalData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="222" column="9" lean-forward="false" selection-start-line="222" selection-start-column="6" selection-end-line="222" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="515" column="50" lean-forward="false" selection-start-line="515" selection-start-column="50" selection-end-line="515" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="67" column="92" lean-forward="true" selection-start-line="67" selection-start-column="92" selection-end-line="67" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animal_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalGroup_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="124" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/animalSubGroup_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/breed_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/destination_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/eggLog_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="119" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedPurchase_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedSubtype_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedType_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/feedUnit_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/forage_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="59" lean-forward="false" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/medication_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="60" lean-forward="false" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/medsGiven_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/note_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="54" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/origin_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherDest_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="59" lean-forward="false" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherReason_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/otherRemove_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/paddock_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/reason_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sale_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/sheepCare_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slaughter_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/slayHouse_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vendor_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="56" lean-forward="false" selection-start-line="21" selection-start-column="56" selection-end-line="21" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/vet_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/farmdb/templates/farmdb/listView/wormer_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
           <folding />
         </state>
       </provider>

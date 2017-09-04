@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Vet</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
             <td>{{ vt.contact }}</td>
             <td>{{ vt.assistants }}</td>
             <td>{{ vt.comments }}</td>
+        <td> <a href="{% url 'farmdb:VetDelete' pk=vt.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>

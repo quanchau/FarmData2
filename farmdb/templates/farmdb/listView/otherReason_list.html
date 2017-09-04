@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Other Reason</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ ot.farm }}</td>
             <td>{{ ot.reason }}</td>
+            <td> <a href="{% url 'farmdb:OtherReasonDelete' pk=ot.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>

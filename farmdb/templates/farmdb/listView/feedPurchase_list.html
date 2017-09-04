@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Feed Purchase</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@
             <td>{{ fp.units }}</td>
             <td>{{ fp.priceUnit }}</td>
             <td>{{ fp.weightUnit }}</td>
+            <td> <a href="{% url 'farmdb:FeedPurchaseDelete' pk=fp.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>
