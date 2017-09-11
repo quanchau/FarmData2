@@ -21,9 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['farmdev.org','104.236.216.248']
 SECRET_KEY = 'udf21xs-1dziq2v0ho_2l=8j#&&=xu2$v676_wl4uya_c!%^#*'
 
 # Application definition
@@ -74,8 +74,12 @@ WSGI_APPLICATION = 'farmdata2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'farmdb',
+        'USER': 'vicky',
+        'PASSWORD': 'jaYLO2008',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -122,3 +126,4 @@ AUTH_PROFILE_MODULE = 'userprofile.Farmer'
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
