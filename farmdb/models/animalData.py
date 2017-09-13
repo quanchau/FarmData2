@@ -214,7 +214,7 @@ class Paddock(models.Model):
 
 class Note(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    note_date = models.DateField()
+    noteDate = models.DateField()
     note = models.TextField()
     filename = models.FileField(blank=True)
     created_by = models.CharField(max_length=50)
@@ -262,7 +262,7 @@ class Slaughter(models.Model):
     hauler = models.CharField(max_length=200)
     haulEquip = models.CharField(max_length=200)
     slayDate = models.DateField()
-    weight = models.PositiveSmallIntegerField
+    weight = models.PositiveSmallIntegerField()
     estimated = models.CharField(max_length=9)
     fees = models.DecimalField(max_digits=5, decimal_places=2)
     comments = models.TextField()

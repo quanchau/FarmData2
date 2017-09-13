@@ -122,7 +122,7 @@ class AnimalCreateView(CreateView):
     model = Animal
     fields = (
         'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
-        'animalGroup', 'breed', 'subGroup', 'origin',)
+        'animalGroup', 'breed', 'animalSubGroup', 'origin',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -136,7 +136,7 @@ class AnimalCreateView(CreateView):
 class ReasonCreateView(CreateView):
     template_name = "farmdb/createView/create_reason.html"
     model = Reason
-    fields = ('reason')
+    fields = ('reason',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -192,7 +192,7 @@ class MedsGivenCreateView(CreateView):
 class EggLogCreateView(CreateView):
     template_name = "farmdb/createView/create_eggLog.html"
     model = EggLog
-    fields = ('collection_date', 'number', 'comments', 'vet_id')
+    fields = ('collection_date', 'number', 'comments')
     success_url = '/'
 
     def form_valid(self, form):
@@ -221,7 +221,7 @@ class SheepCareCreateView(CreateView):
     template_name = "farmdb/createView/create_sheepCare.html"
     model = SheepCare
     fields = (
-        'care_date', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormer_quantity', 'hoof',
+        'careDate', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormerQuantity', 'hoof',
         'weight', 'estimated', 'comments')
     success_url = '/'
 
@@ -264,7 +264,7 @@ class PaddockCreateView(CreateView):
 class NoteCreateView(CreateView):
     template_name = "farmdb/createView/create_note.html"
     model = Note
-    fields = ('note_date', 'note', 'filename')
+    fields = ('noteDate', 'note', 'filename')
     success_url = '/'
 
     def form_valid(self, form):
@@ -279,7 +279,7 @@ class NoteCreateView(CreateView):
 class DestinationCreateView(CreateView):
     template_name = "farmdb/createView/create_destination.html"
     model = Destination
-    fields = ('destination')
+    fields = ('destination',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -307,7 +307,7 @@ class SaleCreateView(CreateView):
 class SlayHouseCreateView(CreateView):
     template_name = "farmdb/createView/create_slayHouse.html"
     model = SlayHouse
-    fields = ('slayHouse')
+    fields = ('slayHouse',)
     success_url = '/'
 
     def form_valid(self, form):
