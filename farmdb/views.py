@@ -880,11 +880,225 @@ class FeedPurchaseListView(ListView):
     def get_queryset(self):
         return FeedPurchase.objects.filter(farm=self.request.user.farmer.farm)
 
-# UpdateView
+
+# UpdateViews
+
+@method_decorator(login_required, name='dispatch')
+class AnimalGroupUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animalGroup.html"
+    model = AnimalGroup
+    fields = ('animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class BreedUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_breed.html"
+    model = Breed
+    fields = ('breed', 'animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class AnimalSubGroupUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animalSubGroup.html"
+    model = AnimalSubGroup
+    fields = ('animalSubGroup', 'animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OriginUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_origin.html"
+    model = Origin
+    fields = ('origin',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class AnimalUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animal.html"
+    model = Animal
+    fields = (
+        'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
+        'animalGroup', 'breed', 'animalSubGroup', 'origin',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class ReasonUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_reason.html"
+    model = Reason
+    fields = ('reason',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class VetUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_vet.html"
+    model = Vet
+    fields = ('careDate', 'animalId',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class MedicationUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_medication.html"
+    model = Medication
+    fields = ('medication', 'dosage')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class MedsGivenUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_medsGiven.html"
+    model = MedsGiven
+    fields = ('medication', 'units', 'units_given', 'vet_id')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class EggLogUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_eggLog.html"
+    model = EggLog
+    fields = ('collection_date', 'number', 'comments')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class WormerUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_wormer.html"
+    model = Wormer
+    fields = ('wormer',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SheepCareUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_sheepCare.html"
+    model = SheepCare
+    fields = (
+        'careDate', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormerQuantity', 'hoof',
+        'weight', 'estimated', 'comments')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class ForageUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_forage.html"
+    model = Forage
+    fields = ('forage', 'density')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class PaddockUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_paddock.html"
+    model = Paddock
+    fields = ('size', 'forage')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class NoteUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_note.html"
+    model = Note
+    fields = ('noteDate', 'note', 'filename')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class DestinationUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_destination.html"
+    model = Destination
+    fields = ('destination',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SaleUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_sale.html"
+    model = Sale
+    fields = ('animal', 'saleTag', 'destination', 'weight', 'estimated', 'priceLb', 'fees', 'comments', 'saleDate')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SlayHouseUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_slayHouse.html"
+    model = SlayHouse
+    fields = ('slayHouse',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SlaughterUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_slaughter.html"
+    model = Slaughter
+    fields = (
+        'animal', 'saleTag', 'slayHouse', 'hauler', 'haulEquip', 'slayDate', 'weight', 'estimated', 'fees', 'comments')
+    success_url = '/'
+
 
 @method_decorator(login_required, name='dispatch')
 class OtherDestUpdateView(UpdateView):
-    template_name = "farmdb/createView/create_otherDest.html"
+    template_name = "farmdb/updateView/update_otherDest.html"
     model = OtherDest
     fields = ('dest',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherReasonUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_otherReason.html"
+    model = OtherReason
+    fields = ('reason',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherRemoveUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_otherRemove.html"
+    model = OtherRemove
+    fields = ('animal', 'removeDate', 'reason', 'destination', 'weight', 'comments',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedTypeUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedType.html"
+    model = FeedType
+    fields = ('type',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedUnitUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedUnit.html"
+    model = FeedUnit
+    fields = ('unit',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedSubtypeUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedSubtype.html"
+    model = FeedSubtype
+    fields = ('type', 'subtype',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class VendorUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_vendor.html"
+    model = Vendor
+    fields = ('vendor',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedPurchaseUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedPurchase.html"
+    model = FeedPurchase
+    fields = ('purchaseDate', 'type', 'subtype', 'animalGroup', 'vendor', 'units', 'priceUnit', 'weightUnit',)
     success_url = '/'

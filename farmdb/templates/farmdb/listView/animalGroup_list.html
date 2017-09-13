@@ -10,6 +10,7 @@
         <tr>
             <th>Farm</th>
             <th>Animal Group</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -19,7 +20,7 @@
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ ag.farm }}</td>
             <td>{{ ag.animalGroup }}</td>
-            <td>{{ ag.animalGroup }}</td>
+            <td> <a href="{% url 'farmdb:AnimalGroupUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:AnimalGroupDelete' pk=ag.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

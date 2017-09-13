@@ -71,8 +71,33 @@ urlpatterns = [
     # DetailViews
 
     # UpdateViews
+    url(r'^update/AnimalGroup/(?P<pk>\d+)/$', views.AnimalGroupUpdateView.as_view(), name='AnimalGroupUpdate'),
+    url(r'^update/Breed/(?P<pk>\d+)/$', views.BreedUpdateView.as_view(), name='BreedUpdate'),
+    url(r'^update/AnimalSubGroup/(?P<pk>\d+)/$', views.AnimalSubGroupUpdateView.as_view(), name='AnimalSubGroupUpdate'),
+    url(r'^update/Origin/(?P<pk>\d+)/$', views.OriginUpdateView.as_view(), name='OriginUpdate'),
+    url(r'^update/Animal/(?P<pk>\d+)/$', views.AnimalUpdateView.as_view(), name='AnimalUpdate'),
+    url(r'^update/Reason/(?P<pk>\d+)/$', views.ReasonUpdateView.as_view(), name='ReasonUpdate'),
+    url(r'^update/Vet/(?P<pk>\d+)/$', views.VetUpdateView.as_view(), name='VetUpdate'),
+    url(r'^update/Medication/(?P<pk>\d+)/$', views.MedicationUpdateView.as_view(), name='MedicationUpdate'),
+    url(r'^update/MedsGiven/(?P<pk>\d+)/$', views.MedsGivenUpdateView.as_view(), name='MedsGivenUpdate'),
+    url(r'^update/EggLog/(?P<pk>\d+)/$', views.EggLogUpdateView.as_view(), name='EggLogUpdate'),
+    url(r'^update/Wormer/(?P<pk>\d+)/$', views.WormerUpdateView.as_view(), name='WormerUpdate'),
+    url(r'^update/SheepCare/(?P<pk>\d+)/$', views.SheepCareUpdateView.as_view(), name='SheepCareUpdate'),
+    url(r'^update/Forage/(?P<pk>\d+)/$', views.ForageUpdateView.as_view(), name='ForageUpdate'),
+    url(r'^update/Paddock/(?P<pk>\d+)/$', views.PaddockUpdateView.as_view(), name='PaddockUpdate'),
+    url(r'^update/Note/(?P<pk>\d+)/$', views.NoteUpdateView.as_view(), name='NoteUpdate'),
+    url(r'^update/Destination/(?P<pk>\d+)/$', views.DestinationUpdateView.as_view(), name='DestinationUpdate'),
+    url(r'^update/Sale/(?P<pk>\d+)/$', views.SaleUpdateView.as_view(), name='SaleUpdate'),
+    url(r'^update/SlayHouse/(?P<pk>\d+)/$', views.SlayHouseUpdateView.as_view(), name='SlayHouseUpdate'),
+    url(r'^update/Slaughter/(?P<pk>\d+)/$', views.SlaughterUpdateView.as_view(), name='SlaughterUpdate'),
     url(r'^update/OtherDest/(?P<pk>\d+)/$', views.OtherDestUpdateView.as_view(), name='OtherDestUpdate'),
-
+    url(r'^update/OtherReason/(?P<pk>\d+)/$', views.OtherReasonUpdateView.as_view(), name='OtherReasonUpdate'),
+    url(r'^update/OtherRemove/(?P<pk>\d+)/$', views.OtherRemoveUpdateView.as_view(), name='OtherRemoveUpdate'),
+    url(r'^update/FeedType/(?P<pk>\d+)/$', views.FeedTypeUpdateView.as_view(), name='FeedTypeUpdate'),
+    url(r'^update/FeedSubtype/(?P<pk>\d+)/$', views.FeedSubtypeUpdateView.as_view(), name='FeedSubtypeUpdate'),
+    url(r'^update/FeedUnit/(?P<pk>\d+)/$', views.FeedUnitUpdateView.as_view(), name='FeedUnitUpdate'),
+    url(r'^update/Vendor/(?P<pk>\d+)/$', views.VendorUpdateView.as_view(), name='VendorUpdate'),
+    url(r'^update/FeedPurchase/(?P<pk>\d+)/$', views.FeedPurchaseUpdateView.as_view(), name='FeedPurchaseUpdate'),
 
     # DeleteViews
     url(r'^delete/AnimalGroup/(?P<pk>\d+)/$', views.AnimalGroupDelete.as_view(), name='AnimalGroupDelete'),
@@ -103,8 +128,5 @@ urlpatterns = [
     url(r'^delete/FeedPurchase/(?P<pk>\d+)/$', views.FeedPurchaseDelete.as_view(), name='FeedPurchaseDelete'),
     url(r'^delete/Destination/(?P<pk>\d+)/$', views.DestinationDelete.as_view(), name='DestinationDelete'),
 
-    # url(r'^$/', views.index, name='index'),
-    # url(r'^$/', views.login_user, name='user_login'),
-    # url(r'^$/', views.logout_user, name='user_logout'),
 
 ]
