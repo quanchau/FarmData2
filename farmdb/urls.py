@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^create/FeedUnit$', views.FeedUnitCreateView.as_view(), name="FeedUnitCreate"),
     url(r'^create/FeedSubtype$', views.FeedSubtypeCreateView.as_view(), name="FeedSubtypeCreate"),
     url(r'^create/Vendor$', views.VendorCreateView.as_view(), name="VendorCreate"),
+    url(r'^create/Destination$', views.DestinationCreateView.as_view(), name="DestinationCreate"),
     url(r'^create/FeedPurchase$', views.FeedPurchaseCreateView.as_view(), name="FeedPurchaseCreate"),
 
     # List views

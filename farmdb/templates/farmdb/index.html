@@ -1,19 +1,53 @@
 {% extends 'farmdb/base.html' %}
 {% block body %}
-<div>
-    <div class="container select_item">
-        <div class="row select_item">
-            <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalGroupCreate' %}">Animal Group</a></div>
-            <div class="col-md-3 select_item"><a href="#">Animal Sub Group</a></div>
-            <div class="col-md-3 select_item"><a href="#">Animal </a></div>
-            <div class="col-md-3"><a href="#">Animal </a></div>
-        </div>
-        <div class="row select_item">
-            <div class="col-md-3 select_item"><a href="#">Animal Group</a></div>
-            <div class="col-md-3 select_item"><a href="#">Animal Sub Group</a></div>
-            <div class="col-md-3 select_item"><a href="#">Animal </a></div>
-            <div class="col-md-3"><a href="#">Animal </a></div>
+    <h1>
+        <center>Create</center>
+    </h1>
+    <div>
+        <div class="container select_item">
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalGroupCreate' %}">AnimalGroup</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:BreedCreate' %}">Breed</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalSubGroupCreate' %}">AnimalSubGroup</a>
+                </div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OriginCreate' %}">Origin</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalCreate' %}">Animal</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:ReasonCreate' %}">Reason</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:VetCreate' %}">Vet</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:MedicationCreate' %}">Medication</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:MedsGivenCreate' %}">MedsGiven</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:EggLogCreate' %}">EggLog</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:WormerCreate' %}">Wormer</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SheepCareCreate' %}">SheepCare</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:ForageCreate' %}">Forage</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:PaddockCreate' %}">Paddock</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:NoteCreate' %}">Note</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:DestinationCreate' %}">Destination</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SaleCreate' %}">Sale</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SlayHouseCreate' %}">SlayHouse</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SlaughterCreate' %}">Slaughter</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherDestCreate' %}">OtherDest</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherReasonCreate' %}">OtherReason</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherRemoveCreate' %}">OtherRemove</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedTypeCreate' %}">FeedType</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedSubtypeCreate' %}">FeedSubtype</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedUnitCreate' %}">FeedUnit</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:VendorCreate' %}">Vendor</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedPurchaseCreate' %}">FeedPurchase</a></div>
+                <div class="col-md-3 select_item"><a href="#">PH</a></div>
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}

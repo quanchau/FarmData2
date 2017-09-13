@@ -177,7 +177,7 @@ class Wormer(models.Model):
 
 class SheepCare(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    care_date = models.DateField()
+    careDate = models.DateField()
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
     eye = models.SmallIntegerField()
     body = models.SmallIntegerField()
@@ -186,7 +186,7 @@ class SheepCare(models.Model):
     coat = models.CharField(max_length=100)
     jaw = models.SmallIntegerField()
     wormer = models.CharField(max_length=100)
-    wormer_quantity = models.IntegerField
+    wormerQuantity = models.IntegerField()
     hoof = models.CharField(max_length=3)
     weight = models.IntegerField()
     estimated = models.CharField(max_length=9)

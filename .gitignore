@@ -102,4 +102,5 @@ ENV/
 
 #Django security files
 secret_settings.py
+settings.py
  
