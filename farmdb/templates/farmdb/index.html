@@ -46,8 +46,59 @@
                 <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedUnitCreate' %}">FeedUnit</a></div>
                 <div class="col-md-3 select_item"><a href="{% url 'farmdb:VendorCreate' %}">Vendor</a></div>
                 <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedPurchaseCreate' %}">FeedPurchase</a></div>
-                <div class="col-md-3 select_item"><a href="#">PH</a></div>
             </div>
         </div>
     </div>
+    <h1>
+        <center>List</center>
+    </h1>
+    <div>
+        <div class="container select_item">
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalGroupList' %}">AnimalGroup</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:BreedList' %}">Breed</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalSubGroupList' %}">AnimalSubGroup</a>
+                </div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OriginList' %}">Origin</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:AnimalList' %}">Animal</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:ReasonList' %}">Reason</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:VetList' %}">Vet</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:MedicationList' %}">Medication</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:MedsGivenList' %}">MedsGiven</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:EggLogList' %}">EggLog</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:WormerList' %}">Wormer</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SheepCareList' %}">SheepCare</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:ForageList' %}">Forage</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:PaddockList' %}">Paddock</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:NoteList' %}">Note</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:DestinationList' %}">Destination</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SaleList' %}">Sale</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SlayHouseList' %}">SlayHouse</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:SlaughterList' %}">Slaughter</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherDestList' %}">OtherDest</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherReasonList' %}">OtherReason</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:OtherRemoveList' %}">OtherRemove</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedTypeList' %}">FeedType</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedSubtypeList' %}">FeedSubtype</a></div>
+            </div>
+            <div class="row select_item">
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedUnitList' %}">FeedUnit</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:VendorList' %}">Vendor</a></div>
+                <div class="col-md-3 select_item"><a href="{% url 'farmdb:FeedPurchaseList' %}">FeedPurchase</a></div>
+                <div class="col-md-3 select_item">
+                </div>
+            </div>
+        </div>
+
+
 {% endblock %}

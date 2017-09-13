@@ -653,7 +653,7 @@ class BreedListView(ListView):
     template_name = 'farmdb/listView/breed_list.html'
 
     def get_queryset(self):
-        return Breed.objects.filter(frm=self.request.user.farmer.farm)
+        return Breed.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -662,7 +662,7 @@ class AnimalSubGroupListView(ListView):
     template_name = 'farmdb/listView/animalSubGroup_list.html'
 
     def get_queryset(self):
-        return AnimalSubGroup.objects.filter(frm=self.request.user.farmer.farm)
+        return AnimalSubGroup.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -671,7 +671,7 @@ class OriginListView(ListView):
     template_name = 'farmdb/listView/origin_list.html'
 
     def get_queryset(self):
-        return Origin.objects.filter(frm=self.request.user.farmer.farm)
+        return Origin.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -680,7 +680,7 @@ class AnimalListView(ListView):
     template_name = 'farmdb/listView/animal_list.html'
 
     def get_queryset(self):
-        return Animal.objects.filter(frm=self.request.user.farmer.farm)
+        return Animal.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -689,7 +689,7 @@ class ReasonListView(ListView):
     template_name = 'farmdb/listView/reason_list.html'
 
     def get_queryset(self):
-        return Reason.objects.filter(frm=self.request.user.farmer.farm)
+        return Reason.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -698,7 +698,7 @@ class VetListView(ListView):
     template_name = 'farmdb/listView/vet_list.html'
 
     def get_queryset(self):
-        return Vet.objects.filter(frm=self.request.user.farmer.farm)
+        return Vet.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -707,7 +707,7 @@ class MedicationListView(ListView):
     template_name = 'farmdb/listView/medication_list.html'
 
     def get_queryset(self):
-        return Medication.objects.filter(frm=self.request.user.farmer.farm)
+        return Medication.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -716,7 +716,7 @@ class MedsGivenListView(ListView):
     template_name = 'farmdb/listView/medsGiven_list.html'
 
     def get_queryset(self):
-        return MedsGiven.objects.filter(frm=self.request.user.farmer.farm)
+        return MedsGiven.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -725,7 +725,7 @@ class EggLogListView(ListView):
     template_name = 'farmdb/listView/eggLog_list.html'
 
     def get_queryset(self):
-        return EggLog.objects.filter(frm=self.request.user.farmer.farm)
+        return EggLog.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -734,7 +734,7 @@ class WormerListView(ListView):
     template_name = 'farmdb/listView/wormer_list.html'
 
     def get_queryset(self):
-        return Wormer.objects.filter(frm=self.request.user.farmer.farm)
+        return Wormer.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -743,7 +743,7 @@ class SheepCareListView(ListView):
     template_name = 'farmdb/listView/sheepCare_list.html'
 
     def get_queryset(self):
-        return SheepCare.objects.filter(frm=self.request.user.farmer.farm)
+        return SheepCare.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -752,7 +752,7 @@ class ForageListView(ListView):
     template_name = 'farmdb/listView/forage_list.html'
 
     def get_queryset(self):
-        return Forage.objects.filter(frm=self.request.user.farmer.farm)
+        return Forage.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -761,7 +761,7 @@ class PaddockListView(ListView):
     template_name = 'farmdb/listView/paddock_list.html'
 
     def get_queryset(self):
-        return Paddock.objects.filter(frm=self.request.user.farmer.farm)
+        return Paddock.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -770,7 +770,7 @@ class NoteListView(ListView):
     template_name = 'farmdb/listView/note_list.html'
 
     def get_queryset(self):
-        return Note.objects.filter(frm=self.request.user.farmer.farm)
+        return Note.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -779,7 +779,7 @@ class DestinationListView(ListView):
     template_name = 'farmdb/listView/destination_list.html'
 
     def get_queryset(self):
-        return Destination.objects.filter(frm=self.request.user.farmer.farm)
+        return Destination.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -788,7 +788,7 @@ class SaleListView(ListView):
     template_name = 'farmdb/listView/sale_list.html'
 
     def get_queryset(self):
-        return Sale.objects.filter(frm=self.request.user.farmer.farm)
+        return Sale.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -797,7 +797,7 @@ class SlayHouseListView(ListView):
     template_name = 'farmdb/listView/slayHouse_list.html'
 
     def get_queryset(self):
-        return SlayHouse.objects.filter(frm=self.request.user.farmer.farm)
+        return SlayHouse.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -806,7 +806,7 @@ class SlaughterListView(ListView):
     template_name = 'farmdb/listView/slaughter_list.html'
 
     def get_queryset(self):
-        return Slaughter.objects.filter(frm=self.request.user.farmer.farm)
+        return Slaughter.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -815,7 +815,7 @@ class OtherDestListView(ListView):
     template_name = 'farmdb/listView/otherDest_list.html'
 
     def get_queryset(self):
-        return OtherDest.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherDest.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -824,7 +824,7 @@ class OtherReasonListView(ListView):
     template_name = 'farmdb/listView/otherReason_list.html'
 
     def get_queryset(self):
-        return OtherReason.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherReason.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -833,7 +833,7 @@ class OtherRemoveListView(ListView):
     template_name = 'farmdb/listView/otherRemove_list.html'
 
     def get_queryset(self):
-        return OtherRemove.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherRemove.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -842,7 +842,7 @@ class FeedTypeListView(ListView):
     template_name = 'farmdb/listView/feedType_list.html'
 
     def get_queryset(self):
-        return FeedType.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedType.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -851,7 +851,7 @@ class FeedSubtypeListView(ListView):
     template_name = 'farmdb/listView/feedSubtype_list.html'
 
     def get_queryset(self):
-        return FeedSubtype.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedSubtype.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -860,7 +860,7 @@ class FeedUnitListView(ListView):
     template_name = 'farmdb/listView/feedUnit_list.html'
 
     def get_queryset(self):
-        return FeedUnit.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedUnit.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -869,7 +869,7 @@ class VendorListView(ListView):
     template_name = 'farmdb/listView/vendor_list.html'
 
     def get_queryset(self):
-        return Vendor.objects.filter(frm=self.request.user.farmer.farm)
+        return Vendor.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -878,7 +878,7 @@ class FeedPurchaseListView(ListView):
     template_name = 'farmdb/listView/feedPurchase_list.html'
 
     def get_queryset(self):
-        return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedPurchase.objects.filter(farm=self.request.user.farmer.farm)
 
 # UpdateView
 
