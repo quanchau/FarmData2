@@ -21,6 +21,7 @@
             <td>{{ el.collectionDate }}</td>
             <td>{{ el.number }}</td>
             <td>{{ el.comments }}</td>
+            <td> <a href="{% url 'farmdb:EggLogUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:EggLogDelete' pk=el.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

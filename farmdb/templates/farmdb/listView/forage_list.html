@@ -20,6 +20,7 @@
             <td>{{ fr.farm }}</td>
             <td>{{ fr.forage }}</td>
             <td>{{ fr.density }}</td>
+            <td> <a href="{% url 'farmdb:ForageUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:ForageDelete' pk=fr.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

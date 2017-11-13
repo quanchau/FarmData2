@@ -28,6 +28,7 @@
             <td>{{ sl.estimated }}</td>
             <td>{{ sl.fees }}</td>
             <td>{{ sl.comments }}</td>
+            <td> <a href="{% url 'farmdb:AnimalGroupUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SlaughterDelete' pk=sl.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

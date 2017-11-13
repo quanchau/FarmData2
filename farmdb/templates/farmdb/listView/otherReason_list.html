@@ -19,6 +19,7 @@
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ ot.farm }}</td>
             <td>{{ ot.reason }}</td>
+            <td> <a href="{% url 'farmdb:OtherReasonUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:OtherReasonDelete' pk=ot.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

@@ -24,6 +24,7 @@
             <td>{{ ot.destination }}</td>
             <td>{{ ot.weight }}</td>
             <td>{{ ot.comments }}</td>
+            <td> <a href="{% url 'farmdb:OtherRemoveUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:OtherRemoveDelete' pk=ot.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

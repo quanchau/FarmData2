@@ -27,6 +27,7 @@
             <td>{{ sl.fees }}</td>
             <td>{{ sl.comments }}</td>
             <td>{{ sl.saleDate }}</td>
+            <td> <a href="{% url 'farmdb:SaleUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SaleDelete' pk=sl.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

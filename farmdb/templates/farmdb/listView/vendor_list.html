@@ -19,6 +19,7 @@
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ vd.farm }}</td>
             <td>{{ vd.vendor }}</td>
+            <td> <a href="{% url 'farmdb:VendorUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:VendorDelete' pk=vd.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

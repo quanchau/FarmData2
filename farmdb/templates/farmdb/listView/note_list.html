@@ -22,6 +22,7 @@
             <td>{{ nt.note }}</td>
             <td>{{ nt.filename }}</td>
             <td>{{ nt.created_by }}</td>
+            <td> <a href="{% url 'farmdb:MedsGivenUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:NoteCreate' pk=nt.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

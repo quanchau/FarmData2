@@ -22,6 +22,7 @@
             <td>{{ mg.units }}</td>
             <td>{{ mg.unitsGiven }}</td>
             <td>{{ mg.vetId }}</td>
+            <td> <a href="{% url 'farmdb:MedsGivenUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:MedsGivenDelete' pk=mg.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

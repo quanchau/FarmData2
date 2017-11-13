@@ -20,6 +20,7 @@
             <td>{{ pd.farm }}</td>
             <td>{{ pd.size }}</td>
             <td>{{ pd.forage }}</td>
+            <td> <a href="{% url 'farmdb:PaddockUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:PaddockDelete' pk=pd.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

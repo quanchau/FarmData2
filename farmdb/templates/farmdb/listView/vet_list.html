@@ -29,6 +29,7 @@
             <td>{{ vt.contact }}</td>
             <td>{{ vt.assistants }}</td>
             <td>{{ vt.comments }}</td>
+            <td> <a href="{% url 'farmdb:VetUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:VetDelete' pk=vt.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
