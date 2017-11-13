@@ -122,7 +122,7 @@ class AnimalCreateView(CreateView):
     model = Animal
     fields = (
         'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
-        'animalGroup', 'breed', 'subGroup', 'origin',)
+        'animalGroup', 'breed', 'animalSubGroup', 'origin',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -136,7 +136,7 @@ class AnimalCreateView(CreateView):
 class ReasonCreateView(CreateView):
     template_name = "farmdb/createView/create_reason.html"
     model = Reason
-    fields = ('reason')
+    fields = ('reason',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -192,7 +192,7 @@ class MedsGivenCreateView(CreateView):
 class EggLogCreateView(CreateView):
     template_name = "farmdb/createView/create_eggLog.html"
     model = EggLog
-    fields = ('collection_date', 'number', 'comments', 'vet_id')
+    fields = ('collection_date', 'number', 'comments')
     success_url = '/'
 
     def form_valid(self, form):
@@ -221,7 +221,7 @@ class SheepCareCreateView(CreateView):
     template_name = "farmdb/createView/create_sheepCare.html"
     model = SheepCare
     fields = (
-        'care_date', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormer_quantity', 'hoof',
+        'careDate', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormerQuantity', 'hoof',
         'weight', 'estimated', 'comments')
     success_url = '/'
 
@@ -264,7 +264,7 @@ class PaddockCreateView(CreateView):
 class NoteCreateView(CreateView):
     template_name = "farmdb/createView/create_note.html"
     model = Note
-    fields = ('note_date', 'note', 'filename')
+    fields = ('noteDate', 'note', 'filename')
     success_url = '/'
 
     def form_valid(self, form):
@@ -279,7 +279,7 @@ class NoteCreateView(CreateView):
 class DestinationCreateView(CreateView):
     template_name = "farmdb/createView/create_destination.html"
     model = Destination
-    fields = ('destination')
+    fields = ('destination',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -307,7 +307,7 @@ class SaleCreateView(CreateView):
 class SlayHouseCreateView(CreateView):
     template_name = "farmdb/createView/create_slayHouse.html"
     model = SlayHouse
-    fields = ('slayHouse')
+    fields = ('slayHouse',)
     success_url = '/'
 
     def form_valid(self, form):
@@ -653,7 +653,7 @@ class BreedListView(ListView):
     template_name = 'farmdb/listView/breed_list.html'
 
     def get_queryset(self):
-        return Breed.objects.filter(frm=self.request.user.farmer.farm)
+        return Breed.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -662,7 +662,7 @@ class AnimalSubGroupListView(ListView):
     template_name = 'farmdb/listView/animalSubGroup_list.html'
 
     def get_queryset(self):
-        return AnimalSubGroup.objects.filter(frm=self.request.user.farmer.farm)
+        return AnimalSubGroup.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -671,7 +671,7 @@ class OriginListView(ListView):
     template_name = 'farmdb/listView/origin_list.html'
 
     def get_queryset(self):
-        return Origin.objects.filter(frm=self.request.user.farmer.farm)
+        return Origin.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -680,7 +680,7 @@ class AnimalListView(ListView):
     template_name = 'farmdb/listView/animal_list.html'
 
     def get_queryset(self):
-        return Animal.objects.filter(frm=self.request.user.farmer.farm)
+        return Animal.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -689,7 +689,7 @@ class ReasonListView(ListView):
     template_name = 'farmdb/listView/reason_list.html'
 
     def get_queryset(self):
-        return Reason.objects.filter(frm=self.request.user.farmer.farm)
+        return Reason.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -698,7 +698,7 @@ class VetListView(ListView):
     template_name = 'farmdb/listView/vet_list.html'
 
     def get_queryset(self):
-        return Vet.objects.filter(frm=self.request.user.farmer.farm)
+        return Vet.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -707,7 +707,7 @@ class MedicationListView(ListView):
     template_name = 'farmdb/listView/medication_list.html'
 
     def get_queryset(self):
-        return Medication.objects.filter(frm=self.request.user.farmer.farm)
+        return Medication.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -716,7 +716,7 @@ class MedsGivenListView(ListView):
     template_name = 'farmdb/listView/medsGiven_list.html'
 
     def get_queryset(self):
-        return MedsGiven.objects.filter(frm=self.request.user.farmer.farm)
+        return MedsGiven.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -725,7 +725,7 @@ class EggLogListView(ListView):
     template_name = 'farmdb/listView/eggLog_list.html'
 
     def get_queryset(self):
-        return EggLog.objects.filter(frm=self.request.user.farmer.farm)
+        return EggLog.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -734,7 +734,7 @@ class WormerListView(ListView):
     template_name = 'farmdb/listView/wormer_list.html'
 
     def get_queryset(self):
-        return Wormer.objects.filter(frm=self.request.user.farmer.farm)
+        return Wormer.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -743,7 +743,7 @@ class SheepCareListView(ListView):
     template_name = 'farmdb/listView/sheepCare_list.html'
 
     def get_queryset(self):
-        return SheepCare.objects.filter(frm=self.request.user.farmer.farm)
+        return SheepCare.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -752,7 +752,7 @@ class ForageListView(ListView):
     template_name = 'farmdb/listView/forage_list.html'
 
     def get_queryset(self):
-        return Forage.objects.filter(frm=self.request.user.farmer.farm)
+        return Forage.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -761,7 +761,7 @@ class PaddockListView(ListView):
     template_name = 'farmdb/listView/paddock_list.html'
 
     def get_queryset(self):
-        return Paddock.objects.filter(frm=self.request.user.farmer.farm)
+        return Paddock.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -770,7 +770,7 @@ class NoteListView(ListView):
     template_name = 'farmdb/listView/note_list.html'
 
     def get_queryset(self):
-        return Note.objects.filter(frm=self.request.user.farmer.farm)
+        return Note.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -779,7 +779,7 @@ class DestinationListView(ListView):
     template_name = 'farmdb/listView/destination_list.html'
 
     def get_queryset(self):
-        return Destination.objects.filter(frm=self.request.user.farmer.farm)
+        return Destination.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -788,7 +788,7 @@ class SaleListView(ListView):
     template_name = 'farmdb/listView/sale_list.html'
 
     def get_queryset(self):
-        return Sale.objects.filter(frm=self.request.user.farmer.farm)
+        return Sale.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -797,7 +797,7 @@ class SlayHouseListView(ListView):
     template_name = 'farmdb/listView/slayHouse_list.html'
 
     def get_queryset(self):
-        return SlayHouse.objects.filter(frm=self.request.user.farmer.farm)
+        return SlayHouse.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -806,7 +806,7 @@ class SlaughterListView(ListView):
     template_name = 'farmdb/listView/slaughter_list.html'
 
     def get_queryset(self):
-        return Slaughter.objects.filter(frm=self.request.user.farmer.farm)
+        return Slaughter.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -815,7 +815,7 @@ class OtherDestListView(ListView):
     template_name = 'farmdb/listView/otherDest_list.html'
 
     def get_queryset(self):
-        return OtherDest.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherDest.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -824,7 +824,7 @@ class OtherReasonListView(ListView):
     template_name = 'farmdb/listView/otherReason_list.html'
 
     def get_queryset(self):
-        return OtherReason.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherReason.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -833,7 +833,7 @@ class OtherRemoveListView(ListView):
     template_name = 'farmdb/listView/otherRemove_list.html'
 
     def get_queryset(self):
-        return OtherRemove.objects.filter(frm=self.request.user.farmer.farm)
+        return OtherRemove.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -842,7 +842,7 @@ class FeedTypeListView(ListView):
     template_name = 'farmdb/listView/feedType_list.html'
 
     def get_queryset(self):
-        return FeedType.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedType.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -851,7 +851,7 @@ class FeedSubtypeListView(ListView):
     template_name = 'farmdb/listView/feedSubtype_list.html'
 
     def get_queryset(self):
-        return FeedSubtype.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedSubtype.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -860,7 +860,7 @@ class FeedUnitListView(ListView):
     template_name = 'farmdb/listView/feedUnit_list.html'
 
     def get_queryset(self):
-        return FeedUnit.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedUnit.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -869,7 +869,7 @@ class VendorListView(ListView):
     template_name = 'farmdb/listView/vendor_list.html'
 
     def get_queryset(self):
-        return Vendor.objects.filter(frm=self.request.user.farmer.farm)
+        return Vendor.objects.filter(farm=self.request.user.farmer.farm)
 
 
 @method_decorator(login_required, name='dispatch')
@@ -878,13 +878,227 @@ class FeedPurchaseListView(ListView):
     template_name = 'farmdb/listView/feedPurchase_list.html'
 
     def get_queryset(self):
-        return FeedPurchase.objects.filter(frm=self.request.user.farmer.farm)
+        return FeedPurchase.objects.filter(farm=self.request.user.farmer.farm)
 
-# UpdateView
+
+# UpdateViews
+
+@method_decorator(login_required, name='dispatch')
+class AnimalGroupUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animalGroup.html"
+    model = AnimalGroup
+    fields = ('animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class BreedUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_breed.html"
+    model = Breed
+    fields = ('breed', 'animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class AnimalSubGroupUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animalSubGroup.html"
+    model = AnimalSubGroup
+    fields = ('animalSubGroup', 'animalGroup',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OriginUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_origin.html"
+    model = Origin
+    fields = ('origin',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class AnimalUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_animal.html"
+    model = Animal
+    fields = (
+        'animalId', 'gender', 'birthDate', 'mother', 'father', 'name', 'markings', 'filename', 'alive', 'comments',
+        'animalGroup', 'breed', 'animalSubGroup', 'origin',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class ReasonUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_reason.html"
+    model = Reason
+    fields = ('reason',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class VetUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_vet.html"
+    model = Vet
+    fields = ('careDate', 'animalId',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class MedicationUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_medication.html"
+    model = Medication
+    fields = ('medication', 'dosage')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class MedsGivenUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_medsGiven.html"
+    model = MedsGiven
+    fields = ('medication', 'units', 'units_given', 'vet_id')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class EggLogUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_eggLog.html"
+    model = EggLog
+    fields = ('collection_date', 'number', 'comments')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class WormerUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_wormer.html"
+    model = Wormer
+    fields = ('wormer',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SheepCareUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_sheepCare.html"
+    model = SheepCare
+    fields = (
+        'careDate', 'animal', 'eye', 'body', 'tail', 'nose', 'coat', 'jaw', 'wormer', 'wormerQuantity', 'hoof',
+        'weight', 'estimated', 'comments')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class ForageUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_forage.html"
+    model = Forage
+    fields = ('forage', 'density')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class PaddockUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_paddock.html"
+    model = Paddock
+    fields = ('size', 'forage')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class NoteUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_note.html"
+    model = Note
+    fields = ('noteDate', 'note', 'filename')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class DestinationUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_destination.html"
+    model = Destination
+    fields = ('destination',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SaleUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_sale.html"
+    model = Sale
+    fields = ('animal', 'saleTag', 'destination', 'weight', 'estimated', 'priceLb', 'fees', 'comments', 'saleDate')
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SlayHouseUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_slayHouse.html"
+    model = SlayHouse
+    fields = ('slayHouse',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class SlaughterUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_slaughter.html"
+    model = Slaughter
+    fields = (
+        'animal', 'saleTag', 'slayHouse', 'hauler', 'haulEquip', 'slayDate', 'weight', 'estimated', 'fees', 'comments')
+    success_url = '/'
+
 
 @method_decorator(login_required, name='dispatch')
 class OtherDestUpdateView(UpdateView):
-    template_name = "farmdb/createView/create_otherDest.html"
+    template_name = "farmdb/updateView/update_otherDest.html"
     model = OtherDest
     fields = ('dest',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherReasonUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_otherReason.html"
+    model = OtherReason
+    fields = ('reason',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class OtherRemoveUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_otherRemove.html"
+    model = OtherRemove
+    fields = ('animal', 'removeDate', 'reason', 'destination', 'weight', 'comments',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedTypeUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedType.html"
+    model = FeedType
+    fields = ('type',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedUnitUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedUnit.html"
+    model = FeedUnit
+    fields = ('unit',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedSubtypeUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedSubtype.html"
+    model = FeedSubtype
+    fields = ('type', 'subtype',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class VendorUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_vendor.html"
+    model = Vendor
+    fields = ('vendor',)
+    success_url = '/'
+
+
+@method_decorator(login_required, name='dispatch')
+class FeedPurchaseUpdateView(UpdateView):
+    template_name = "farmdb/updateView/update_feedPurchase.html"
+    model = FeedPurchase
+    fields = ('purchaseDate', 'type', 'subtype', 'animalGroup', 'vendor', 'units', 'priceUnit', 'weightUnit',)
     success_url = '/'

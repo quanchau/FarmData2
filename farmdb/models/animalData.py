@@ -177,7 +177,7 @@ class Wormer(models.Model):
 
 class SheepCare(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    care_date = models.DateField()
+    careDate = models.DateField()
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
     eye = models.SmallIntegerField()
     body = models.SmallIntegerField()
@@ -186,7 +186,7 @@ class SheepCare(models.Model):
     coat = models.CharField(max_length=100)
     jaw = models.SmallIntegerField()
     wormer = models.CharField(max_length=100)
-    wormer_quantity = models.IntegerField
+    wormerQuantity = models.IntegerField()
     hoof = models.CharField(max_length=3)
     weight = models.IntegerField()
     estimated = models.CharField(max_length=9)
@@ -214,7 +214,7 @@ class Paddock(models.Model):
 
 class Note(models.Model):
     farm = models.ForeignKey(Farm, on_delete=models.CASCADE)
-    note_date = models.DateField()
+    noteDate = models.DateField()
     note = models.TextField()
     filename = models.FileField(blank=True)
     created_by = models.CharField(max_length=50)
@@ -262,7 +262,7 @@ class Slaughter(models.Model):
     hauler = models.CharField(max_length=200)
     haulEquip = models.CharField(max_length=200)
     slayDate = models.DateField()
-    weight = models.PositiveSmallIntegerField
+    weight = models.PositiveSmallIntegerField()
     estimated = models.CharField(max_length=9)
     fees = models.DecimalField(max_digits=5, decimal_places=2)
     comments = models.TextField()

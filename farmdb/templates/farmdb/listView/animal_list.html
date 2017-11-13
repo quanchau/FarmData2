@@ -9,7 +9,21 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Animal</th>
+            <th>AnimalID</th>
+            <th>Gender</th>
+            <th>Birth Date</th>
+            <th>Mother</th>
+            <th>Father</th>
+            <th>Name</th>
+            <th>Markings</th>
+            <th>Photo</th>
+            <th>Alive</th>
+            <th>Comments</th>
+            <th>Animal Group</th>
+            <th>Breed</th>
+            <th>Animal Sub Group</th>
+            <th>Origin</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -18,9 +32,9 @@
         <tr>
 {#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ al.farm }}</td>
-            <td>{{ al.animal_id }}</td>
+            <td>{{ al.animalId }}</td>
             <td>{{ al.gender }}</td>
-            <td>{{ al.birth_date }}</td>
+            <td>{{ al.birthDate }}</td>
             <td>{{ al.mother }}</td>
             <td>{{ al.father }}</td>
             <td>{{ al.name }}</td>
@@ -32,6 +46,7 @@
             <td>{{ al.breed }}</td>
             <td>{{ al.animalSubGroup }}</td>
             <td>{{ al.origin }}</td>
+            <td> <a href="{% url 'farmdb:AnimalUpdate' pk=al.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:AnimalDelete' pk=al.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
