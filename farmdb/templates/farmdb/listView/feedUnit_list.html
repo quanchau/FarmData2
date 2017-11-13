@@ -10,16 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Feed Unit</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for fu in feedunit_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ fu.farm }}</td>
             <td>{{ fu.unit }}</td>
-            <td> <a href="{% url 'farmdb:FeedUnitUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td> <a href="{% url 'farmdb:FeedUnitUpdate' pk=fu.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:FeedUnitDelete' pk=fu.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

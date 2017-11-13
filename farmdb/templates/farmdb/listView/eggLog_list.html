@@ -9,19 +9,21 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Egg Log</th>
+            <th>Collection Date</th>
+            <th>Number</th>
+            <th>Comments</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for el in egglog_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ el.farm }}</td>
             <td>{{ el.collectionDate }}</td>
             <td>{{ el.number }}</td>
             <td>{{ el.comments }}</td>
-            <td> <a href="{% url 'farmdb:EggLogUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td> <a href="{% url 'farmdb:EggLogUpdate' pk=el.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:EggLogDelete' pk=el.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

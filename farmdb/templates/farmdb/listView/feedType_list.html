@@ -12,16 +12,16 @@
                 <tr>
                     <th>Farm</th>
                     <th>Feed Type</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for ft in feedtype_list %}
                     <tr>
-                        {#            <td>{{phoneCall.question_id}}</a></td>#}
                         <td>{{ ft.farm }}</td>
                         <td>{{ ft.type }}</td>
-                        <td> <a href="{% url 'farmdb:FeedTypeUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+                        <td> <a href="{% url 'farmdb:FeedTypeUpdate' pk=ft.pk%}" class="btn btn-info" role="button">Edit</a></td>
                         <td><a href="{% url 'farmdb:FeedTypeDelete' pk=ft.pk %}" class="btn btn-danger" role="button">Delete</a>
                         </td>
                     </tr>

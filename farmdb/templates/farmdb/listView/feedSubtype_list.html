@@ -9,18 +9,19 @@
         <thead>
         <tr>
             <th>Farm</th>
+            <th>Feed Type</th>
             <th>Feed Subtype</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for fs in feedsubtype_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ fs.farm }}</td>
             <td>{{ fs.type }}</td>
             <td>{{ fs.subtype }}</td>
-            <td> <a href="{% url 'farmdb:FeedSubtypeUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td> <a href="{% url 'farmdb:FeedSubtypeUpdate' pk=fs.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:FeedSubtypeDelete' pk=fs.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

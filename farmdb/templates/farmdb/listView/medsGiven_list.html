@@ -9,20 +9,23 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Meds Given</th>
+            <th>Medication</th>
+            <th>Units</th>
+            <th>Units Given</th>
+            <th>Vet ID</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for mg in medsgiven_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ mg.farm }}</td>
             <td>{{ mg.medication }}</td>
             <td>{{ mg.units }}</td>
             <td>{{ mg.unitsGiven }}</td>
             <td>{{ mg.vetId }}</td>
-            <td> <a href="{% url 'farmdb:MedsGivenUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td> <a href="{% url 'farmdb:MedsGivenUpdate' pk=mg.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:MedsGivenDelete' pk=mg.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

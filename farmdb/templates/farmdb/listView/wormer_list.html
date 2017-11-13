@@ -10,16 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Wormer</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for wr in wormer_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ wr.farm }}</td>
             <td>{{ wr.wormer }}</td>
-            <td> <a href="{% url 'farmdb:WormerUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td> <a href="{% url 'farmdb:WormerUpdate' pk=wr.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:WormerDelete' pk=wr.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
