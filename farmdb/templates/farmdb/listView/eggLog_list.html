@@ -2,8 +2,16 @@
 {% load tz %}
 
 {% block body %}
-<h1><center><strong>EggLog</strong></center></h1>
+<h1>
+    <center><strong>EggLog</strong></center>
+</h1>
 {% if egglog_list %}
+<form name="date" method="get">
+    {% csrf_token %}
+    <input id="from" type="date" name="From">
+    <input id="to" type="date" name="To">
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -20,18 +28,20 @@
         {% for el in egglog_list %}
         <tr>
             <td>{{ el.farm }}</td>
-            <td>{{ el.collectionDate }}</td>
+            <td>{{ el.collection_date }}</td>
             <td>{{ el.number }}</td>
             <td>{{ el.comments }}</td>
-            <td> <a href="{% url 'farmdb:EggLogUpdate' pk=el.pk%}" class="btn btn-info" role="button">Edit</a></td>
-            <td> <a href="{% url 'farmdb:EggLogDelete' pk=el.pk%}" class="btn btn-danger" role="button">Delete</a></td>
+            <td><a href="{% url 'farmdb:EggLogUpdate' pk=el.pk%}" class="btn btn-info" role="button">Edit</a></td>
+            <td><a href="{% url 'farmdb:EggLogDelete' pk=el.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
 {% else %}
-<h2><center>You haven't added something in this category. Please added something for me to store.</center></h2>
+<h2>
+    <center>You haven't added something in this category. Please added something for me to store.</center>
+</h2>
 {% endif %}
 {% endblock %}
 
