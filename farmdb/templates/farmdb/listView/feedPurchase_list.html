@@ -10,13 +10,20 @@
         <tr>
             <th>Farm</th>
             <th>Feed Purchase</th>
+            <th>Feed Type</th>
+            <th>Feed Subtype</th>
+            <th>Animal Group</th>
+            <th>Vendor</th>
+            <th>Units</th>
+            <th>Price Unit</th>
+            <th>Weight Unit</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for fp in feedpurchase_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ fp.farm }}</td>
             <td>{{ fp.purchaseDate }}</td>
             <td>{{ fp.type }}</td>
@@ -26,6 +33,7 @@
             <td>{{ fp.units }}</td>
             <td>{{ fp.priceUnit }}</td>
             <td>{{ fp.weightUnit }}</td>
+            <td> <a href="{% url 'farmdb:FeedPurchaseUpdate' pk=fp.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:FeedPurchaseDelete' pk=fp.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

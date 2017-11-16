@@ -9,14 +9,19 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Other Remove</th>
+            <th>Animal</th>
+            <th>Remove Date</th>
+            <th>Reason</th>
+            <th>Destination</th>
+            <th>Weight</th>
+            <th>Comments</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for ot in otherremove_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ ot.farm }}</td>
             <td>{{ ot.animal }}</td>
             <td>{{ ot.removeDate }}</td>
@@ -24,6 +29,7 @@
             <td>{{ ot.destination }}</td>
             <td>{{ ot.weight }}</td>
             <td>{{ ot.comments }}</td>
+            <td> <a href="{% url 'farmdb:OtherRemoveUpdate' pk=ot.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:OtherRemoveDelete' pk=ot.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

@@ -10,15 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Origin</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for og in origin_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ og.farm }}</td>
             <td>{{ og.origin }}</td>
+            <td> <a href="{% url 'farmdb:OriginUpdate' pk=og.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:OriginDelete' pk=og.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

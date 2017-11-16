@@ -10,16 +10,18 @@
         <tr>
             <th>Farm</th>
             <th>Forage</th>
+            <th>Density</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for fr in forage_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ fr.farm }}</td>
             <td>{{ fr.forage }}</td>
             <td>{{ fr.density }}</td>
+            <td> <a href="{% url 'farmdb:ForageUpdate' pk=fr.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:ForageDelete' pk=fr.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

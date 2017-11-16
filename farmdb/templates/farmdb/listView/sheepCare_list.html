@@ -9,14 +9,27 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Sheep Care</th>
+            <th>Care Date</th>
+            <th>Animal</th>
+            <th>Eye</th>
+            <th>Body</th>
+            <th>Tail</th>
+            <th>Nose</th>
+            <th>Coat</th>
+            <th>Jaw</th>
+            <th>Wormer</th>
+            <th>Wormer Quantity</th>
+            <th>Hoof</th>
+            <th>Weight</th>
+            <th>Estimated</th>
+            <th>Comments</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for sc in sheepcare_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sc.farm }}</td>
             <td>{{ sc.care_date }}</td>
             <td>{{ sc.animal }}</td>
@@ -32,6 +45,7 @@
             <td>{{ sc.weight }}</td>
             <td>{{ sc.estimated }}</td>
             <td>{{ sc.comments }}</td>
+            <td> <a href="{% url 'farmdb:SheepCareUpdate' pk=sc.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SheepCareDelete' pk=sc.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

@@ -10,15 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Vendor</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for vd in vendor_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ vd.farm }}</td>
             <td>{{ vd.vendor }}</td>
+            <td> <a href="{% url 'farmdb:VendorUpdate' pk=vd.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:VendorDelete' pk=vd.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

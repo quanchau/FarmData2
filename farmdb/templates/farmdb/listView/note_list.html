@@ -9,19 +9,23 @@
         <thead>
         <tr>
             <th>Farm</th>
+            <th>Note Date</th>
             <th>Note</th>
+            <th>Files</th>
+            <th>Created by</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for nt in note_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ nt.farm }}</td>
             <td>{{ nt.noteDate }}</td>
             <td>{{ nt.note }}</td>
             <td>{{ nt.filename }}</td>
             <td>{{ nt.created_by }}</td>
+            <td> <a href="{% url 'farmdb:MedsGivenUpdate' pk=nt.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:NoteCreate' pk=nt.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

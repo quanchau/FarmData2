@@ -9,17 +9,19 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Paddock</th>
+            <th>Size</th>
+            <th>Forage</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for pd in paddock_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ pd.farm }}</td>
             <td>{{ pd.size }}</td>
             <td>{{ pd.forage }}</td>
+            <td> <a href="{% url 'farmdb:PaddockUpdate' pk=pd.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:PaddockDelete' pk=pd.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

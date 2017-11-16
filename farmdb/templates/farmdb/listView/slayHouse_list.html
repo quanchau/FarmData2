@@ -10,15 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Slay House</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for sh in slayhouse_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sh.farm }}</td>
             <td>{{ sh.slayHouse }}</td>
+            <td> <a href="{% url 'farmdb:SlayHouseUpdate' pk=sh.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SlayHouseDelete' pk=sh.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
