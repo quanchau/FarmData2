@@ -3,23 +3,25 @@
 
 {% block body %}
 <h1><center><strong>Animal Sub Group</strong></center></h1>
-{% if subgroup_list %}
+{% if animalsubgroup_list %}
 <div class="table-responsive">
     <table class="table">
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Sub Group</th>
+            <th>Animal Sub Group</th>
+            <th>Animal Group</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
-        {% for sg in subgroup_list %}
+        {% for sg in animalsubgroup_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sg.farm }}</td>
             <td>{{ sg.animalSubGroup }}</td>
             <td>{{ sg.animalGroup }}</td>
+            <td> <a href="{% url 'farmdb:AnimalSubGroupUpdate' pk=sg.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:AnimalSubGroupDelete' pk=sg.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

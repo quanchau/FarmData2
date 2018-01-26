@@ -9,14 +9,23 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Slaughter</th>
+            <th>Animal</th>
+            <th>Sale Tag</th>
+            <th>Slay House</th>
+            <th>Hauler</th>
+            <th>Haul Equipment</th>
+            <th>Slay Date</th>
+            <th>Weight</th>
+            <th>Estimated Price</th>
+            <th>Fees</th>
+            <th>Comments</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for sl in slaughter_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sl.farm }}</td>
             <td>{{ sl.animal }}</td>
             <td>{{ sl.saleTag }}</td>
@@ -28,6 +37,7 @@
             <td>{{ sl.estimated }}</td>
             <td>{{ sl.fees }}</td>
             <td>{{ sl.comments }}</td>
+            <td> <a href="{% url 'farmdb:AnimalGroupUpdate' pk=sl.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SlaughterDelete' pk=sl.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

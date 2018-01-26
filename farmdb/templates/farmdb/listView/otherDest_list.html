@@ -10,15 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Other Dest</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for od in otherdest_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ od.farm }}</td>
             <td>{{ od.dest }}</td>
+            <td> <a href="{% url 'farmdb:OtherDestUpdate' pk=od.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:OtherDestDelete' pk=od.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

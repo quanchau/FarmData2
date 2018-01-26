@@ -9,14 +9,24 @@
         <thead>
         <tr>
             <th>Farm</th>
+            <th>Care Date</th>
+            <th>Animal ID</th>
+            <th>Reason</th>
+            <th>Symptoms</th>
+            <th>Temperature</th>
+            <th>Care</th>
+            <th>Weight</th>
             <th>Vet</th>
+            <th>Contact</th>
+            <th>Assistants</th>
+            <th>Comments</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for vt in vet_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ vt.farm }}</td>
             <td>{{ vt.care_date }}</td>
             <td>{{ vt.animalId }}</td>
@@ -29,6 +39,7 @@
             <td>{{ vt.contact }}</td>
             <td>{{ vt.assistants }}</td>
             <td>{{ vt.comments }}</td>
+            <td> <a href="{% url 'farmdb:VetUpdate' pk=vt.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:VetDelete' pk=vt.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

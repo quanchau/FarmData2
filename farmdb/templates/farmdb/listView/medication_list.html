@@ -10,16 +10,18 @@
         <tr>
             <th>Farm</th>
             <th>Medication</th>
+            <th>Dosage</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for md in medication_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ md.farm }}</td>
             <td>{{ md.medication }}</td>
             <td>{{ md.dosage }}</td>
+            <td> <a href="{% url 'farmdb:MedicationUpdate' pk=md.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:MedicationDelete' pk=md.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

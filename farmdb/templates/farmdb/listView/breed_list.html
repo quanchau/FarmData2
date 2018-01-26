@@ -10,6 +10,8 @@
         <tr>
             <th>Farm</th>
             <th>Breed</th>
+            <th>Animal Group</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -20,6 +22,7 @@
             <td>{{ bd.farm }}</td>
             <td>{{ bd.breed }}</td>
             <td>{{ bd.animalGroup }}</td>
+            <td> <a href="{% url 'farmdb:BreedUpdate' pk=bd.pk%}" class="btn btn-info" role="button">Edit</a></td>
             <td> <a href="{% url 'farmdb:BreedDelete' pk=bd.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

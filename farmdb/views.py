@@ -724,8 +724,26 @@ class EggLogListView(ListView):
     model = EggLog
     template_name = 'farmdb/listView/eggLog_list.html'
 
+    # def get_queryset(self):
+    #
+    #     # if self.request.method.GET['From']:
+    #     #     queryset.filter(collection_date__gte= self.request.GET['From'])
+    #     #     queryset.filter(collection_date__lte = self.request.GET['To'])
+    #     return queryset
+
     def get_queryset(self):
-        return EggLog.objects.filter(farm=self.request.user.farmer.farm)
+        from_date = self.request.GET.get('From', '2011-01-01')
+        to_date = self.request.GET.get('To', '2020-12-31')
+        queryset = EggLog.objects.filter(farm=self.request.user.farmer.farm)
+        queryset.filter(collection_date__gte=from_date)
+        queryset.filter(collection_date__lte = to_date)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super(EggLogListView, self).get_context_data()
+        context['From'] = self.request.GET.get('From', '2017-01-01')
+        context['To'] = self.request.GET.get('To', '2017-12-31')
+        return context
 
 
 @method_decorator(login_required, name='dispatch')

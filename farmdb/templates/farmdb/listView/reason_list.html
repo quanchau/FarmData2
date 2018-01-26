@@ -10,15 +10,16 @@
         <tr>
             <th>Farm</th>
             <th>Reason</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for rn in reason_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ rn.farm }}</td>
             <td>{{ rn.reason }}</td>
+            <td> <a href="{% url 'farmdb:ReasonUpdate' pk=rn.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:ReasonDelete' pk=rn.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}

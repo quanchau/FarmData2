@@ -17,7 +17,6 @@
         <tbody>
         {% for ag in animalgroup_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ ag.farm }}</td>
             <td>{{ ag.animalGroup }}</td>
             <td> <a href="{% url 'farmdb:AnimalGroupUpdate' pk=ag.pk%}" class="btn btn-info" role="button">Edit</a></td>

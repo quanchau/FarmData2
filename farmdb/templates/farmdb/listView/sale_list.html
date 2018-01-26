@@ -9,14 +9,22 @@
         <thead>
         <tr>
             <th>Farm</th>
-            <th>Sale</th>
+            <th>Animal</th>
+            <th>Sale Tag</th>
+            <th>Destination</th>
+            <th>Weight</th>
+            <th>Estimated</th>
+            <th>Price/Lb</th>
+            <th>Fees</th>
+            <th>Comments</th>
+            <th>Sale Date</th>
+            <th>Edit</th>
             <th>Delete</th>
         </tr>
         </thead>
         <tbody>
         {% for sl in sale_list %}
         <tr>
-{#            <td>{{phoneCall.question_id}}</a></td>#}
             <td>{{ sl.farm }}</td>
             <td>{{ sl.animal }}</td>
             <td>{{ sl.saleTag }}</td>
@@ -27,6 +35,7 @@
             <td>{{ sl.fees }}</td>
             <td>{{ sl.comments }}</td>
             <td>{{ sl.saleDate }}</td>
+            <td> <a href="{% url 'farmdb:SaleUpdate' pk=sl.pk%}" class="btn btn-info" role="button">Edit</a></td>
         <td> <a href="{% url 'farmdb:SaleDelete' pk=sl.pk%}" class="btn btn-danger" role="button">Delete</a></td>
         </tr>
         {% endfor %}
